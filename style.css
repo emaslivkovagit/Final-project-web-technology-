@@ -2,6 +2,10 @@
  * Project Gutenberg — style.css (redesigned from scratch)
  *
  * New stylesheet — does not reuse gutenberg-globals.css.
+ * Color scheme: charcoal + gold, replacing original teal/blue.
+ * Rationale: warmer, literary feel — suits a classic book archive better
+ * than the original corporate teal.
+ *
  * Built for: index.html, about.html, top.html
  *
  * Structure:
@@ -21,20 +25,29 @@
 /* 1. Variables ============================================================ */
 
 :root {
-  --teal:      #2e7d9e;
-  --teal-light:#c7dde3;
-  --teal-bg:   #eaf4f7;
-  --ink:       #1a1a1a;
-  --ink-soft:  #555;
-  --white:     #fff;
-  --off-white: #f5fafc;
-  --border:    #d0e4ea;
-  --gold:      #9a772b;
+  /* Primary: charcoal */
+  --charcoal:      #2b2b2b;
+  --charcoal-mid:  #3d3d3d;
+  --charcoal-soft: #555;
 
+  /* Accent: gold */
+  --gold:          #b8922a;
+  --gold-light:    #f0d98a;
+  --gold-bg:       #fdf8ee;
+
+  /* Neutrals */
+  --white:         #fff;
+  --off-white:     #f8f5f0;
+  --border:        #e0d9ce;
+  --ink:           #1a1a1a;
+  --ink-soft:      #555;
+
+  /* Typography */
   --font-head: 'Playfair Display', Georgia, serif;
   --font-body: 'Source Sans 3', sans-serif;
-  --max-w:     1100px;
-  --radius:    6px;
+
+  --max-w:  1100px;
+  --radius: 6px;
 }
 
 
@@ -52,111 +65,135 @@ body {
 
 h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
 
-a { color: var(--teal); text-decoration: none; }
-a:hover { text-decoration: underline; color: #1a5f7a; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--charcoal); text-decoration: underline; }
 
-img { display: block; max-width: 100%; }
-
-ul { list-style: none; padding: 0; }
+img  { display: block; max-width: 100%; }
+ul   { list-style: none; padding: 0; }
 ul li { margin-bottom: 0.4rem; }
-
-p { margin-bottom: 0.75rem; }
+p    { margin-bottom: 0.75rem; }
 p:last-child { margin-bottom: 0; }
 
 
 /* 3. Header =============================================================== */
 
 .site-header {
-  background: var(--teal);
-  padding:    1.25rem 2rem 0;
+  position:   sticky;
+  top:        0;
+  z-index:    100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
 }
 
-/* Top row: logo + search + donate */
+/* Top strip: darkest charcoal — logo, stats, donate */
 .header-top {
   display:         flex;
   align-items:     center;
   justify-content: space-between;
-  gap:             2rem;
-  max-width:       var(--max-w);
-  margin:          0 auto 1.25rem;
+  background:      var(--charcoal);
+  padding:         0.7rem 2rem;
+  gap:             1.5rem;
+  border-bottom:   1px solid rgba(255,255,255,0.06);
 }
 
-.logo { line-height: 0; }
-.logo img { filter: brightness(0) invert(1); }
+.logo { line-height: 0; flex-shrink: 0; }
+/* Invert logo so it shows white on dark background */
+.logo img { filter: brightness(0) invert(1); height: 42px; width: auto; }
 
-/* Search block in center of header */
-.header-search { text-align: center; flex: 1; }
+/* Stats line in center of top strip */
+.header-stats {
+  flex:           1;
+  text-align:     center;
+  font-size:      0.78rem;
+  color:          var(--gold-light);
+  letter-spacing: 0.05em;
+}
 
-.header-search p {
-  color:         rgba(255,255,255,0.8);
+/* Donate button — gold on dark */
+.donate-btn {
+  background:    var(--gold);
+  color:         var(--charcoal);
+  font-weight:   700;
   font-size:     0.85rem;
-  margin-bottom: 0.4rem;
+  padding:       0.4rem 1.1rem;
+  border-radius: var(--radius);
+  white-space:   nowrap;
+  flex-shrink:   0;
+  transition:    background 0.2s;
+}
+
+.donate-btn:hover {
+  background:      var(--gold-light);
+  text-decoration: none;
+  color:           var(--charcoal);
+}
+
+/* Middle strip: slightly lighter charcoal — search bar */
+.header-search {
+  background:      var(--charcoal-mid);
+  padding:         0.85rem 2rem;
+  display:         flex;
+  justify-content: center;
+  border-bottom:   1px solid rgba(255,255,255,0.06);
 }
 
 .header-search form {
   display:   flex;
-  max-width: 480px;
-  margin:    0 auto;
+  width:     100%;
+  max-width: 560px;
 }
 
 .header-search input {
-  flex:          1;
-  padding:       0.5rem 1rem;
-  border:        none;
+  flex:        1;
+  padding:     0.55rem 1.1rem;
+  border:      none;
   border-radius: var(--radius) 0 0 var(--radius);
-  font-size:     0.95rem;
-  outline:       none;
+  font-size:   0.95rem;
+  font-family: var(--font-body);
+  background:  var(--off-white);
+  color:       var(--ink);
+  outline:     none;
 }
+
+.header-search input::placeholder { color: #999; }
 
 .header-search button {
-  padding:       0.5rem 1.25rem;
-  background:    #1a5f7a;
-  color:         var(--white);
+  padding:       0.55rem 1.3rem;
+  background:    var(--gold);
+  color:         var(--charcoal);
   border:        none;
   border-radius: 0 var(--radius) var(--radius) 0;
-  font-weight:   600;
+  font-weight:   700;
+  font-size:     0.9rem;
   cursor:        pointer;
-}
-
-.header-search button:hover { background: #144d63; }
-
-/* Donate button top-right */
-.donate-btn {
-  background:    var(--white);
-  color:         var(--teal);
-  font-weight:   600;
-  padding:       0.45rem 1.1rem;
-  border-radius: var(--radius);
+  transition:    background 0.2s;
   white-space:   nowrap;
 }
 
-.donate-btn:hover {
-  background:     var(--teal-light);
-  text-decoration: none;
-}
+.header-search button:hover { background: var(--gold-light); }
 
-/* Bottom nav bar */
+/* Bottom strip: nav links */
 .header-nav {
   display:         flex;
   justify-content: center;
-  gap:             0.25rem;
-  max-width:       var(--max-w);
-  margin:          0 auto;
-  border-top:      1px solid rgba(255,255,255,0.2);
-  padding:         0.5rem 0;
+  gap:             0.15rem;
+  background:      var(--charcoal-mid);
+  padding:         0.3rem 2rem;
+  border-top:      1px solid rgba(255,255,255,0.04);
 }
 
 .header-nav a {
-  color:         rgba(255,255,255,0.9);
-  font-size:     0.85rem;
+  color:         rgba(255,255,255,0.75);
+  font-size:     0.82rem;
   font-weight:   600;
-  padding:       0.3rem 0.75rem;
+  padding:       0.35rem 0.85rem;
   border-radius: var(--radius);
-  transition:    background 0.2s;
+  letter-spacing: 0.02em;
+  transition:    background 0.2s, color 0.2s;
 }
 
 .header-nav a:hover {
-  background:      rgba(255,255,255,0.15);
+  background:      rgba(255,255,255,0.1);
+  color:           var(--gold-light);
   text-decoration: none;
 }
 
@@ -164,20 +201,18 @@ p:last-child { margin-bottom: 0; }
 /* 4. Intro ================================================================ */
 
 .intro {
-  max-width:  var(--max-w);
-  margin:     0 auto;
-  padding:    2.5rem 2rem 1rem;
+  max-width: var(--max-w);
+  margin:    0 auto;
+  padding:   2.5rem 2rem 1rem;
 }
 
 .intro h1 {
   font-size:     2rem;
   margin-bottom: 0.5rem;
+  color:         var(--ink);
 }
 
-.intro p {
-  color:     var(--ink-soft);
-  max-width: 60ch;
-}
+.intro p { color: var(--ink-soft); max-width: 60ch; }
 
 
 /* 5. Book Shelves ========================================================= */
@@ -192,7 +227,7 @@ p:last-child { margin-bottom: 0; }
   display:         flex;
   align-items:     baseline;
   justify-content: space-between;
-  border-bottom:   2px solid var(--teal-light);
+  border-bottom:   2px solid var(--gold-light);
   padding-bottom:  0.5rem;
   margin-bottom:   1rem;
 }
@@ -200,7 +235,6 @@ p:last-child { margin-bottom: 0; }
 .shelf-header h2 { font-size: 1.3rem; }
 .shelf-header a  { font-size: 0.85rem; font-weight: 600; }
 
-/* Horizontal scrolling row */
 .book-row {
   display:        flex;
   gap:            1rem;
@@ -209,8 +243,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .book-row::-webkit-scrollbar       { height: 5px; }
-.book-row::-webkit-scrollbar-track { background: var(--teal-bg); }
-.book-row::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 4px; }
+.book-row::-webkit-scrollbar-track { background: var(--gold-bg); }
+.book-row::-webkit-scrollbar-thumb { background: var(--gold-light); border-radius: 4px; }
 
 .book-card {
   display:        flex;
@@ -225,7 +259,7 @@ p:last-child { margin-bottom: 0; }
   height:        160px;
   object-fit:    cover;
   border-radius: var(--radius);
-  box-shadow:    0 2px 8px rgba(0,0,0,0.12);
+  box-shadow:    0 2px 8px rgba(0,0,0,0.15);
   transition:    transform 0.2s;
 }
 
@@ -239,10 +273,7 @@ p:last-child { margin-bottom: 0; }
   color:       var(--ink);
 }
 
-.book-card .book-author {
-  color:     var(--ink-soft);
-  font-size: 0.68rem;
-}
+.book-card .book-author { color: var(--ink-soft); font-size: 0.68rem; }
 
 
 /* 6. Categories =========================================================== */
@@ -250,6 +281,7 @@ p:last-child { margin-bottom: 0; }
 .categories {
   background:  var(--white);
   border-top:  1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding:     2rem;
 }
 
@@ -275,20 +307,19 @@ p:last-child { margin-bottom: 0; }
   font-weight:   600;
   font-size:     0.9rem;
   color:         var(--ink);
-  transition:    background 0.2s, color 0.2s;
+  transition:    background 0.2s, color 0.2s, border-color 0.2s;
 }
 
 .category-grid a:hover {
-  background:      var(--teal-bg);
-  color:           var(--teal);
-  border-color:    var(--teal);
+  background:      var(--gold-bg);
+  color:           var(--gold);
+  border-color:    var(--gold-light);
   text-decoration: none;
 }
 
 
 /* 7. Links Section ======================================================== */
 
-/* Changed: no blue rectangles, plain four-column layout */
 .links-section {
   display:               grid;
   grid-template-columns: repeat(4, 1fr);
@@ -300,13 +331,14 @@ p:last-child { margin-bottom: 0; }
 }
 
 .links-col h3 {
-  font-size:     1rem;
-  margin-bottom: 0.75rem;
+  font-size:      1rem;
+  margin-bottom:  0.75rem;
   padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--teal-light);
-  color:         var(--ink);
+  border-bottom:  2px solid var(--gold-light);
+  color:          var(--ink);
 }
 
+/* Second h3 inside same column (How to Help) */
 .links-col h3 + h3 { margin-top: 1.25rem; }
 
 .links-col ul li {
@@ -333,16 +365,16 @@ p:last-child { margin-bottom: 0; }
 }
 
 .audio-section p {
-  max-width:     var(--max-w);
-  margin:        0 auto 0.75rem;
-  color:         var(--ink-soft);
-  font-size:     0.9rem;
+  max-width:  var(--max-w);
+  margin:     0 auto 0.75rem;
+  color:      var(--ink-soft);
+  font-size:  0.9rem;
 }
 
 .audio-section ul {
-  max-width:  var(--max-w);
-  margin:     0 auto;
-  list-style: disc;
+  max-width:    var(--max-w);
+  margin:       0 auto;
+  list-style:   disc;
   padding-left: 1.25rem;
 }
 
@@ -358,8 +390,8 @@ p:last-child { margin-bottom: 0; }
 /* 9. Footer =============================================================== */
 
 .site-footer {
-  background: var(--ink);
-  color:      rgba(255,255,255,0.6);
+  background: var(--charcoal);
+  color:      rgba(255,255,255,0.55);
   padding:    2.5rem 2rem;
   margin-top: 2rem;
 }
@@ -374,16 +406,12 @@ p:last-child { margin-bottom: 0; }
   margin:          0 auto;
 }
 
-.footer-brand img { opacity: 0.7; margin-bottom: 0.5rem; }
+.footer-brand img { opacity: 0.6; filter: brightness(0) invert(1); margin-bottom: 0.5rem; }
 
-.footer-brand p {
-  font-size: 0.85rem;
-  color:     rgba(255,255,255,0.5);
-}
+.footer-brand p   { font-size: 0.85rem; color: rgba(255,255,255,0.45); }
+.footer-brand a   { color: var(--gold-light); }
+.footer-brand a:hover { color: var(--white); }
 
-.footer-brand a { color: rgba(255,255,255,0.7); }
-
-/* Footer nav links */
 .footer-links {
   display:        flex;
   flex-direction: column;
@@ -391,63 +419,51 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer-links a {
-  color:     rgba(255,255,255,0.6);
+  color:     rgba(255,255,255,0.55);
   font-size: 0.85rem;
 }
 
-.footer-links a:hover { color: var(--white); }
+.footer-links a:hover { color: var(--gold-light); text-decoration: none; }
 
-/* Social links in footer */
 .footer-social p {
-  font-size:     0.75rem;
+  font-size:      0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color:         rgba(255,255,255,0.4);
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.07em;
+  color:          rgba(255,255,255,0.35);
+  margin-bottom:  0.4rem;
 }
 
 .footer-social p + p { margin-top: 0.75rem; }
 
-.social-row {
-  display: flex;
-  gap:     0.75rem;
-}
+.social-row { display: flex; gap: 0.75rem; }
 
 .social-row a {
-  color:     rgba(255,255,255,0.6);
-  font-size: 0.85rem;
+  color:       rgba(255,255,255,0.55);
+  font-size:   0.85rem;
   font-weight: 600;
 }
 
-.social-row a:hover { color: var(--white); }
+.social-row a:hover { color: var(--gold-light); text-decoration: none; }
 
 
 /* 10. Responsive ========================================================== */
 
 @media (max-width: 768px) {
 
-  .header-top    { flex-wrap: wrap; gap: 1rem; }
-  .header-search { order: 3; width: 100%; }
-  .donate-btn    { order: 2; }
+  .header-top    { padding: 0.6rem 1.25rem; }
+  .header-stats  { display: none; }
+  .header-search { padding: 0.6rem 1.25rem; }
+  .header-nav    { flex-wrap: wrap; padding: 0.3rem 1rem; }
+  .header-nav a  { font-size: 0.76rem; padding: 0.25rem 0.5rem; }
 
-  .header-nav {
-    flex-wrap: wrap;
-    gap:       0.2rem;
-    padding:   0.4rem 0;
-  }
+  .intro         { padding: 1.5rem 1.25rem 0.5rem; }
+  .shelf         { padding: 1.25rem; }
+  .categories    { padding: 1.5rem 1.25rem; }
+  .audio-section { padding: 1.5rem 1.25rem; }
 
-  .header-nav a { font-size: 0.78rem; padding: 0.25rem 0.5rem; }
-
-  .intro       { padding: 1.5rem 1.25rem 0.5rem; }
-  .shelf       { padding: 1.25rem; }
-  .categories  { padding: 1.5rem 1.25rem; }
-
-  .category-grid   { grid-template-columns: repeat(2, 1fr); }
-
-  .links-section   { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.25rem; }
-  .audio-section   { padding: 1.5rem 1.25rem; }
-
-  .footer-inner    { flex-direction: column; }
+  .category-grid  { grid-template-columns: repeat(2, 1fr); }
+  .links-section  { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.25rem; gap: 1.5rem; }
+  .footer-inner   { flex-direction: column; }
 }
 
 @media (max-width: 480px) {
