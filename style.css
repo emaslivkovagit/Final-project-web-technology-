@@ -254,3 +254,37 @@ section {
   display: block;
   margin-bottom: 0.45rem;
 }
+
+/* search page */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+main p {
+  margin-bottom: 1rem;
+}
+
+form p {
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.55rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  background: #c9a84c;
+  border: none;
+  font-weight: bold;
+}
+
+.link-list a {
+  display: inline-block;
+  margin: 0.2rem 0.45rem 0.2rem 0;
+}
