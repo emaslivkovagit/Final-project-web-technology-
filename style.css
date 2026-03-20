@@ -71,15 +71,19 @@ section {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 .logo-text {
   font-family: var(--heading-font);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: var(--gold-light);
+  line-height: 1;
 }
 
 .donate-btn {
