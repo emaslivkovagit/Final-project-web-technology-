@@ -1,38 +1,18 @@
 <!DOCTYPE html>
-<!--
-  Project Gutenberg - Index / Landing Page (Redesigned)
-
-  Changes from original (gutenberg.org):
-  - Replaced original toggle/checkbox header with clean semantic <header>
-  - Custom SVG text logo created replacing original image logo
-  - Header: three-layer structure — top bar (logo + tagline + donate),
-    search bar middle, nav links bottom
-  - Color scheme: British racing green + warm white + gold accent
-  - Intro text moved into header as tagline
-  - Two book shelves separated by a stats strip
-  - Links section redesigned as plain columns without bullet points
-  - Audio books kept as plain text section, no illustration
-  - Social media moved to footer
-  - All links point to live gutenberg.org pages
-  - No inline CSS, all styling via style.css
--->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free eBooks | Project Gutenberg</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://www.gutenberg.org/gutenberg/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <header class="site-header">
-
     <div class="header-top">
       <a href="https://www.gutenberg.org/" class="logo">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <svg width="34" height="34" viewBox="0 0 32 32" fill="none">
           <rect x="4" y="4" width="18" height="24" rx="2" fill="#c9a84c" opacity="0.9"/>
           <rect x="7" y="4" width="18" height="24" rx="2" fill="#e8d5a3" stroke="#c9a84c" stroke-width="1"/>
           <line x1="11" y1="10" x2="21" y2="10" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
@@ -42,17 +22,17 @@
         <span class="logo-text">Project Gutenberg</span>
       </a>
 
-      <div class="header-tagline">
-        <p>Free eBooks for everyone</p>
-        <span>Classic literature, digitized by volunteers since 1971. No fees, no registration — free forever.</span>
-      </div>
-
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
+    </div>
+
+    <div class="header-tagline">
+      <p>Free eBooks for everyone</p>
+      <span>Classic literature, digitized by volunteers since 1971. No fees, no registration — free forever.</span>
     </div>
 
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
-        <input type="text" name="query" placeholder="Search from over 75,000 free eBooks…">
+        <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
         <button type="submit">Search</button>
       </form>
     </div>
@@ -64,17 +44,16 @@
       <a href="https://www.gutenberg.org/ebooks/bookshelf/">Reading Lists</a>
       <a href="https://www.gutenberg.org/ebooks/">Search Options</a>
     </nav>
-
   </header>
 
   <main>
 
-    <!-- Newest Releases -->
-    <section class="shelf">
+    <section class="shelf first-shelf">
       <div class="shelf-header">
         <h2>Newest Releases</h2>
         <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date">find more</a>
       </div>
+
       <div class="book-row">
         <a href="https://www.gutenberg.org/ebooks/78254" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/78254/pg78254.cover.medium.jpg" alt="Silent guests">
@@ -92,7 +71,7 @@
           <span class="book-author">Various</span>
         </a>
         <a href="https://www.gutenberg.org/ebooks/78251" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78251/pg78251.cover.medium.jpg" alt="(CHCl=CH)3As">
+          <img src="https://www.gutenberg.org/cache/epub/78251/pg78251.cover.medium.jpg" alt="Levisite">
           <span>(CHCl=CH)3As (Levisite)</span>
           <span class="book-author">Johannes Robert Becher</span>
         </a>
@@ -101,62 +80,36 @@
           <span>La réforme intellectuelle</span>
           <span class="book-author">Ernest Renan</span>
         </a>
-        <a href="https://www.gutenberg.org/ebooks/78249" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78249/pg78249.cover.medium.jpg" alt="Zeph">
-          <span>Zeph</span>
-          <span class="book-author">Helen Hunt Jackson</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/78248" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78248/pg78248.cover.medium.jpg" alt="Prolegomena to Greek religion">
-          <span>Prolegomena to Greek religion</span>
-          <span class="book-author">Jane Ellen Harrison</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/78247" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78247/pg78247.cover.medium.jpg" alt="Plays by Leonid Andreyeff">
-          <span>Plays by Leonid Andreyeff</span>
-          <span class="book-author">Leonid Andreyeff</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/78246" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78246/pg78246.cover.medium.jpg" alt="Wild volatile-oil plants">
-          <span>Wild volatile-oil plants</span>
-          <span class="book-author">Frank Rabak</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/78245" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/78245/pg78245.cover.medium.jpg" alt="The Mudfog papers">
-          <span>The Mudfog papers</span>
-          <span class="book-author">Charles Dickens</span>
-        </a>
       </div>
     </section>
 
-    <!-- Stats strip between the two shelves -->
     <section class="stats-strip">
-      <div class="stats-strip__inner">
-        <div class="stats-strip__item">
-          <span class="stats-num">75,000+</span>
-          <span class="stats-label">Free eBooks</span>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <strong>75,000+</strong>
+          <span>Free eBooks</span>
         </div>
-        <div class="stats-strip__item">
-          <span class="stats-num">54</span>
-          <span class="stats-label">Years online</span>
+        <div class="stat-box">
+          <strong>54</strong>
+          <span>Years online</span>
         </div>
-        <div class="stats-strip__item">
-          <span class="stats-num">100%</span>
-          <span class="stats-label">Free, always</span>
+        <div class="stat-box">
+          <strong>100%</strong>
+          <span>Free, always</span>
         </div>
-        <div class="stats-strip__item">
-          <span class="stats-num">60,000+</span>
-          <span class="stats-label">Volunteers</span>
+        <div class="stat-box">
+          <strong>60,000+</strong>
+          <span>Volunteers</span>
         </div>
       </div>
     </section>
 
-    <!-- Most Popular -->
     <section class="shelf">
       <div class="shelf-header">
         <h2>Most Popular</h2>
         <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">find more</a>
       </div>
+
       <div class="book-row">
         <a href="https://www.gutenberg.org/ebooks/84" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg" alt="Frankenstein">
@@ -183,35 +136,9 @@
           <span>Wuthering Heights</span>
           <span class="book-author">Emily Brontë</span>
         </a>
-        <a href="https://www.gutenberg.org/ebooks/1513" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/1513/pg1513.cover.medium.jpg" alt="Romeo and Juliet">
-          <span>Romeo and Juliet</span>
-          <span class="book-author">William Shakespeare</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/11" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg" alt="Alice's Adventures in Wonderland">
-          <span>Alice's Adventures in Wonderland</span>
-          <span class="book-author">Lewis Carroll</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/64317" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/64317/pg64317.cover.medium.jpg" alt="The Great Gatsby">
-          <span>The Great Gatsby</span>
-          <span class="book-author">F. Scott Fitzgerald</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/100" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/100/pg100.cover.medium.jpg" alt="Complete Works of Shakespeare">
-          <span>Complete Works of Shakespeare</span>
-          <span class="book-author">William Shakespeare</span>
-        </a>
-        <a href="https://www.gutenberg.org/ebooks/2641" class="book-card">
-          <img src="https://www.gutenberg.org/cache/epub/2641/pg2641.cover.medium.jpg" alt="A Room with a View">
-          <span>A Room with a View</span>
-          <span class="book-author">E. M. Forster</span>
-        </a>
       </div>
     </section>
 
-    <!-- Categories -->
     <section class="categories">
       <h2>Browse by Category</h2>
       <div class="category-grid">
@@ -227,51 +154,45 @@
       </div>
     </section>
 
-    <!-- Links section -->
     <section class="links-section">
       <div class="links-col">
         <h3>Find Free eBooks</h3>
         <a href="https://www.gutenberg.org/browse/scores/top">Frequently Downloaded</a>
-        <span>Top 100, or ranked by popularity</span>
+        <p>Top 100, or ranked by popularity</p>
         <a href="https://www.gutenberg.org/ebooks/categories">Main Categories</a>
-        <span>The ones you'd find in any large bookstore</span>
+        <p>The ones you'd find in any large bookstore</p>
         <a href="https://www.gutenberg.org/ebooks/bookshelf/">Reading Lists</a>
-        <span>Hand-curated by volunteers</span>
+        <p>Hand-curated by volunteers</p>
         <a href="https://www.gutenberg.org/ebooks/">Search Options</a>
-        <span>By author, title, subject, language and more</span>
-        <a href="https://self.gutenberg.org">self.gutenberg.org</a>
-        <span>Self-published eBooks at the World Library Foundation</span>
+        <p>By author, title, subject, language and more</p>
       </div>
 
       <div class="links-col">
         <h3>About Project Gutenberg</h3>
         <a href="https://www.gutenberg.org/about/background/50years.html">50+ Years online</a>
-        <span>Pioneering free eBooks since 1971</span>
+        <p>Pioneering free eBooks since 1971</p>
         <a href="https://www.gutenberg.org/about/">100% Free</a>
-        <span>No fees, no registration, completely free</span>
+        <p>No fees, no registration, completely free</p>
         <a href="https://www.gutenberg.org/about/">Volunteer-based</a>
-        <span>Hundreds of contributors over the years</span>
-        <a href="https://www.gutenberg.org/newsletter/february.html">Dr. Greg Newby</a>
-        <span>Read about our late CEO</span>
+        <p>Built with help from volunteers</p>
         <a href="https://www.gutenberg.org/donate/">Donate</a>
-        <span>Help us digitize more books</span>
+        <p>Help us digitize more books</p>
       </div>
 
       <div class="links-col">
         <h3>Get Help</h3>
         <a href="https://www.gutenberg.org/help/reading_options.html">Reading Options &amp; Kindle</a>
-        <span>How to read and enjoy our eBooks</span>
+        <p>How to read and enjoy our eBooks</p>
         <a href="https://www.gutenberg.org/help/faq.html">Frequently Asked Questions</a>
-        <span>Common questions about Project Gutenberg</span>
+        <p>Common questions about Project Gutenberg</p>
         <a href="https://www.gutenberg.org/help/">Help, How-To and FAQs</a>
-        <span>In depth information about many topics</span>
+        <p>More information and support</p>
+
         <h3>How to Help</h3>
         <a href="https://www.pgdp.net">Distributed Proofreaders</a>
-        <span>Volunteer to proofread — just a page a day helps</span>
+        <p>Volunteer to proofread</p>
         <a href="https://www.gutenberg.org/help/errata.html">Fix and improve</a>
-        <span>Report errors, bugs and typos</span>
-        <a href="https://librivox.org">LibriVox</a>
-        <span>Record audiobooks with our friends</span>
+        <p>Report errors, bugs and typos</p>
       </div>
 
       <div class="links-col">
@@ -281,7 +202,7 @@
         <a href="https://www.gutenberg.org/ebooks/feeds.html">Feeds of new eBooks</a>
         <a href="https://www.gutenberg.org/about/partners_affiliates.html">Partners and affiliates</a>
         <a href="https://www.gutenberg.org/policy/permission.html">Permissions &amp; copyright</a>
-        <a href="https://www.gutenberg.org/about/background/free_ebook.html">What does free eBook mean?</a>
+
         <h3>Audio Books</h3>
         <a href="https://www.gutenberg.org/browse/categories/1">662 titles read by people</a>
         <a href="https://librivox.org">LibriVox human-read audiobooks</a>
@@ -289,14 +210,13 @@
       </div>
     </section>
 
-    <!-- Audio Books -->
     <section class="audio-section">
       <h2>Audio Books</h2>
       <p>All freely available and in the public domain in the US.</p>
       <ul>
         <li><a href="https://www.gutenberg.org/browse/categories/1">Project Gutenberg's 662 titles read by people</a></li>
-        <li><a href="https://librivox.org">Human-read audio books from LibriVox</a> — high-quality volunteer performances</li>
-        <li><a href="https://marhamilresearch4.blob.core.windows.net/gutenberg-public/Website/index.html">The Project Gutenberg Open Audiobook Collection</a> — nearly 5,000 computer-generated titles</li>
+        <li><a href="https://librivox.org">Human-read audio books from LibriVox</a></li>
+        <li><a href="https://marhamilresearch4.blob.core.windows.net/gutenberg-public/Website/index.html">The Project Gutenberg Open Audiobook Collection</a></li>
         <li><a href="https://www.gutenberg.org/browse/categories/2">Project Gutenberg audio books from 2003</a></li>
       </ul>
     </section>
@@ -304,46 +224,34 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-
-      <div class="footer-brand">
-        <a href="https://www.gutenberg.org/" class="logo logo--footer">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <rect x="4" y="4" width="18" height="24" rx="2" fill="#c9a84c" opacity="0.9"/>
-            <rect x="7" y="4" width="18" height="24" rx="2" fill="#e8d5a3" stroke="#c9a84c" stroke-width="1"/>
-            <line x1="11" y1="10" x2="21" y2="10" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="11" y1="14" x2="21" y2="14" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="11" y1="18" x2="17" y2="18" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <span class="logo-text">Project Gutenberg</span>
-        </a>
-        <p>Free eBooks since 1971.<br>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a>.</p>
+    <div class="footer-grid">
+      <div>
+        <h3>Project Gutenberg</h3>
+        <p>Free eBooks since 1971.</p>
+        <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a>.</p>
       </div>
 
-      <nav class="footer-links">
+      <div>
+        <h3>Information</h3>
         <a href="https://www.gutenberg.org/about/">About</a>
         <a href="https://www.gutenberg.org/policy/privacy_policy.html">Privacy Policy</a>
         <a href="https://www.gutenberg.org/policy/permission.html">Permissions</a>
         <a href="https://www.gutenberg.org/policy/terms_of_use.html">Terms of Use</a>
         <a href="https://www.gutenberg.org/about/contact_information.html">Contact</a>
         <a href="https://www.gutenberg.org/help/">Help</a>
-      </nav>
-
-      <div class="footer-social">
-        <p>Follow us</p>
-        <div class="social-row">
-          <a href="https://www.facebook.com/project.gutenberg">Facebook</a>
-          <a href="https://mastodon.social/@gutenberg_org" rel="me">Mastodon</a>
-          <a href="https://bsky.app/profile/gutenberg.org" rel="me">Bluesky</a>
-        </div>
-        <p>News feeds</p>
-        <div class="social-row">
-          <a href="https://www.facebook.com/gutenberg.new">Facebook</a>
-          <a href="https://mastodon.social/@gutenberg_new" rel="me">Mastodon</a>
-          <a href="https://bsky.app/profile/new.gutenberg.org" rel="me">Bluesky</a>
-        </div>
       </div>
 
+      <div>
+        <h3>Follow us</h3>
+        <a href="https://www.facebook.com/project.gutenberg">Facebook</a>
+        <a href="https://mastodon.social/@gutenberg_org" rel="me">Mastodon</a>
+        <a href="https://bsky.app/profile/gutenberg.org" rel="me">Bluesky</a>
+
+        <h3 class="footer-space">News feeds</h3>
+        <a href="https://www.facebook.com/gutenberg.new">Facebook</a>
+        <a href="https://mastodon.social/@gutenberg_new" rel="me">Mastodon</a>
+        <a href="https://bsky.app/profile/new.gutenberg.org" rel="me">Bluesky</a>
+      </div>
     </div>
   </footer>
 
