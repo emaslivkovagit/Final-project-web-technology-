@@ -5,15 +5,18 @@
  * - Replaced hardcoded hex values with CSS variables for consistency
  * - Replaced table-based layout with flexbox and CSS Grid
  * - New fonts: Playfair Display (headings) + Source Sans 3 (body)
- * - Simplified and modernized — removed ~2800 lines not relevant to about page
+ * - Simplified and modernized — removed ~2800 lines not relevant to these pages
  *
  * Structure:
  *   1. Variables
  *   2. Base & Reset
- *   3. Header & Nav        [shared]
- *   4. About Page Sections
- *   5. Footer              [shared]
- *   6. Responsive
+ *   3. Header & Nav             [shared]
+ *   4. Hero                     [shared — about + index]
+ *   5. About Page Sections
+ *   6. Index Page Sections
+ *   7. Top Downloads Page
+ *   8. Footer                   [shared]
+ *   9. Responsive
  */
 
 
@@ -73,16 +76,16 @@ ul { list-style: none; }
 /* 3. Header & Nav [shared] ================================================ */
 
 .site-header {
-  display:          flex;
-  align-items:      center;
-  gap:              2rem;
-  background:       var(--teal);
-  padding:          0 2rem;
-  height:           64px;
-  position:         sticky;
-  top:              0;
-  z-index:          100;
-  box-shadow:       var(--shadow);
+  display:     flex;
+  align-items: center;
+  gap:         2rem;
+  background:  var(--teal);
+  padding:     0 2rem;
+  height:      64px;
+  position:    sticky;
+  top:         0;
+  z-index:     100;
+  box-shadow:  var(--shadow);
 }
 
 .logo {
@@ -117,8 +120,8 @@ ul { list-style: none; }
 }
 
 .nav-link.donate {
-  background: var(--white);
-  color:      var(--teal);
+  background:  var(--white);
+  color:       var(--teal);
   margin-left: 0.5rem;
 }
 
@@ -127,14 +130,13 @@ ul { list-style: none; }
 }
 
 
-/* 4. About Page Sections ================================================== */
+/* 4. Hero [shared — about + index] ======================================== */
 
-/* Hero */
 .hero {
-  background:  linear-gradient(135deg, var(--teal), #3a9dbf);
-  color:       var(--white);
-  padding:     5rem 2rem 3rem;
-  text-align:  center;
+  background: linear-gradient(135deg, var(--teal), #3a9dbf);
+  color:      var(--white);
+  padding:    5rem 2rem 3rem;
+  text-align: center;
 }
 
 .hero .eyebrow {
@@ -160,7 +162,10 @@ ul { list-style: none; }
   margin:     0 auto;
 }
 
-/* Content: mission card + text side by side */
+
+/* 5. About Page Sections ================================================== */
+
+/* Mission card + text side by side */
 .content {
   display:               grid;
   grid-template-columns: 1fr 1fr;
@@ -209,7 +214,7 @@ ul { list-style: none; }
 
 .about-text p { color: var(--ink-soft); }
 
-/* Accordion: more about section */
+/* Accordion */
 .more-section {
   background: var(--white);
   padding:    4rem 2rem;
@@ -246,9 +251,8 @@ summary {
 
 summary:hover { background: var(--teal-bg); }
 
-details p, details a {
-  padding: 0 1.25rem;
-}
+details p,
+details a    { padding: 0 1.25rem; }
 
 details p {
   color:          var(--ink-soft);
@@ -267,7 +271,355 @@ details a {
 details a:hover { text-decoration: underline; }
 
 
-/* 5. Footer [shared] ====================================================== */
+/* 6. Index Page Sections ================================================== */
+
+/* Book shelf rows (newest releases, most popular) */
+.index-shelf {
+  background: var(--white);
+  padding:    2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.index-shelf__inner {
+  max-width: var(--max-w);
+  margin:    0 auto;
+  padding:   0 2rem;
+}
+
+.index-shelf__header {
+  display:         flex;
+  align-items:     baseline;
+  justify-content: space-between;
+  margin-bottom:   1.25rem;
+  padding-bottom:  0.75rem;
+  border-bottom:   2px solid var(--teal-light);
+}
+
+.index-shelf__header h2 { font-size: 1.4rem; }
+.index-shelf__header a  { font-size: 0.85rem; font-weight: 600; }
+
+/* Horizontal scrolling book cover row */
+.lib.latest {
+  display:        flex;
+  gap:            1rem;
+  overflow-x:     auto;
+  padding-bottom: 1rem;
+}
+
+.lib.latest::-webkit-scrollbar       { height: 6px; }
+.lib.latest::-webkit-scrollbar-track { background: var(--teal-bg); border-radius: 4px; }
+.lib.latest::-webkit-scrollbar-thumb { background: var(--teal-light); border-radius: 4px; }
+
+.lib.latest a {
+  text-decoration: none;
+  flex-shrink:     0;
+}
+
+.lib.latest a:hover .cover_title h5 { color: var(--teal); }
+
+.cover_image { width: 110px; }
+
+.cover_img img {
+  width:         110px;
+  height:        160px;
+  object-fit:    cover;
+  border-radius: var(--radius);
+  box-shadow:    var(--shadow);
+  transition:    transform 0.2s, box-shadow 0.2s;
+}
+
+.cover_img img:hover {
+  transform:  translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.cover_title h5 {
+  font-family: var(--font-body);
+  font-size:   0.72rem;
+  font-weight: 400;
+  color:       var(--ink-soft);
+  margin-top:  0.4rem;
+  line-height: 1.3;
+  max-width:   110px;
+}
+
+/* Info boxes — two column grid */
+.info-boxes {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   2rem;
+  max-width:             var(--max-w);
+  margin:                0 auto;
+  padding:               3rem 2rem;
+}
+
+.info-box {
+  background:    var(--teal-bg);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.75rem;
+}
+
+.info-box h3 {
+  font-size:      1.1rem;
+  margin-bottom:  0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom:  2px solid var(--teal-light);
+}
+
+.info-box__subheading {
+  margin-top:    1.25rem;
+  border-top:    1px solid var(--border);
+  padding-top:   1rem;
+  border-bottom: 2px solid var(--teal-light);
+}
+
+.info-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            0.5rem;
+  padding:        0;
+}
+
+.info-list li {
+  font-size:   0.95rem;
+  color:       var(--ink-soft);
+  line-height: 1.5;
+}
+
+.info-list a { font-weight: 600; }
+
+/* Category grid */
+.category-section {
+  background: var(--off-white);
+  padding:    3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.category-section__inner {
+  max-width: var(--max-w);
+  margin:    0 auto;
+  padding:   0 2rem;
+}
+
+.category-section__inner h2 {
+  font-size:     1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   0.75rem;
+}
+
+.category-grid a {
+  display:         flex;
+  align-items:     center;
+  gap:             0.6rem;
+  padding:         0.85rem 1rem;
+  background:      var(--white);
+  border:          1px solid var(--border);
+  border-radius:   var(--radius);
+  font-weight:     600;
+  font-size:       0.9rem;
+  text-decoration: none;
+  color:           var(--ink);
+  transition:      background 0.2s, border-color 0.2s;
+}
+
+.category-grid a::before {
+  content:   attr(data-emoji);
+  font-size: 1.2rem;
+}
+
+.category-grid a:hover {
+  background:   var(--teal-bg);
+  border-color: var(--teal);
+  color:        var(--teal);
+}
+
+/* Social media links */
+.social-links {
+  display:   flex;
+  gap:       1rem;
+  flex-wrap: wrap;
+  margin:    0.75rem 0;
+}
+
+.social-link {
+  display:         flex;
+  align-items:     center;
+  gap:             0.4rem;
+  text-decoration: none;
+  font-size:       0.85rem;
+  font-weight:     600;
+  color:           var(--teal);
+}
+
+.social-link img  { width: 24px; height: 24px; }
+.social-link:hover { color: #1a5f7a; }
+
+
+/* 7. Top Downloads Page =================================================== */
+
+.page-hero {
+  background: var(--teal);
+  color:      var(--white);
+  padding:    3rem 2rem 2rem;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size:     2rem;
+  color:         var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  opacity:   0.85;
+  font-size: 1.05rem;
+  margin:    0 auto;
+  max-width: 52ch;
+}
+
+.top-page-inner {
+  max-width: var(--max-w);
+  margin:    0 auto;
+  padding:   2.5rem 2rem;
+}
+
+/* Stats box */
+.stats-box {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   1rem;
+  margin-bottom:         1.5rem;
+}
+
+.stats-box__item {
+  background:    var(--teal-bg);
+  border:        1px solid var(--border);
+  border-radius: var(--radius);
+  padding:       1.25rem;
+  text-align:    center;
+}
+
+.stats-box__number {
+  display:     block;
+  font-family: var(--font-head);
+  font-size:   1.5rem;
+  font-weight: 700;
+  color:       var(--teal);
+}
+
+.stats-box__label {
+  display:    block;
+  font-size:  0.8rem;
+  color:      var(--ink-soft);
+  margin-top: 0.25rem;
+}
+
+.top-page-note {
+  font-size:     0.875rem;
+  color:         var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+/* Tab navigation */
+.tab-nav {
+  display:        flex;
+  flex-wrap:      wrap;
+  gap:            0.5rem;
+  margin-bottom:  2.5rem;
+  border-bottom:  2px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.tab-link {
+  display:         inline-block;
+  padding:         0.35rem 0.85rem;
+  border-radius:   var(--radius);
+  background:      var(--teal-bg);
+  color:           var(--teal);
+  font-size:       0.875rem;
+  font-weight:     600;
+  text-decoration: none;
+  border:          1px solid var(--border);
+  transition:      background 0.2s, color 0.2s;
+}
+
+.tab-link:hover {
+  background: var(--teal);
+  color:      var(--white);
+}
+
+/* List sections */
+.list-section {
+  margin-bottom: 3rem;
+}
+
+.list-section h2 {
+  font-size:      1.5rem;
+  margin-bottom:  1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom:  2px solid var(--teal-light);
+  color:          var(--ink);
+}
+
+/* Book/author list */
+.book-list {
+  list-style:    none;
+  padding:       0;
+  counter-reset: book-counter;
+}
+
+.book-list li {
+  counter-increment: book-counter;
+  border-bottom:     1px solid var(--border);
+}
+
+.book-list li a {
+  display:         flex;
+  align-items:     baseline;
+  gap:             0.75rem;
+  padding:         0.6rem 0.5rem;
+  text-decoration: none;
+  color:           var(--ink);
+  transition:      background 0.15s;
+}
+
+.book-list li a::before {
+  content:     counter(book-counter);
+  min-width:   2rem;
+  font-size:   0.8rem;
+  font-weight: 600;
+  color:       var(--ink-soft);
+  flex-shrink: 0;
+}
+
+.book-list li a:hover {
+  background: var(--teal-bg);
+  color:      var(--teal);
+}
+
+.book-list .author {
+  font-size:   0.85rem;
+  color:       var(--ink-soft);
+  margin-left: 0.25rem;
+}
+
+.book-list .dl-count {
+  margin-left: auto;
+  font-size:   0.8rem;
+  font-weight: 600;
+  color:       var(--teal);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* 8. Footer [shared] ====================================================== */
 
 .site-footer {
   background: var(--ink);
@@ -292,28 +644,34 @@ details a:hover { text-decoration: underline; }
 
 .footer-links a:hover { color: var(--white); }
 
-.site-footer p {
-  font-size: 0.75rem;
-  opacity:   0.4;
-}
-
-.site-footer p a { color: rgba(255,255,255,0.6); }
+.site-footer p         { font-size: 0.75rem; opacity: 0.4; }
+.site-footer p a       { color: rgba(255,255,255,0.6); }
 
 
-/* 6. Responsive =========================================================== */
+/* 9. Responsive =========================================================== */
 
 @media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap:                   2rem;
-    padding:               2rem 1.5rem;
-  }
 
-  .hero { padding: 3rem 1.5rem 2rem; }
-  .hero h1 { font-size: 1.8rem; }
+  /* Header */
+  .nav-list  { gap: 0; }
+  .nav-link  { font-size: 0.75rem; padding: 0.25rem 0.4rem; }
 
-  .more-section { padding: 2rem 1.5rem; }
+  /* Hero */
+  .hero          { padding: 3rem 1.5rem 2rem; }
+  .hero h1       { font-size: 1.8rem; }
 
-  .nav-list { gap: 0; }
-  .nav-link { font-size: 0.75rem; padding: 0.25rem 0.4rem; }
+  /* About */
+  .content       { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
+  .more-section  { padding: 2rem 1.5rem; }
+
+  /* Index */
+  .info-boxes              { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+  .category-grid           { grid-template-columns: repeat(2, 1fr); }
+  .index-shelf__inner      { padding: 0 1.5rem; }
+  .category-section__inner { padding: 0 1.5rem; }
+
+  /* Top downloads */
+  .stats-box        { grid-template-columns: 1fr; }
+  .tab-nav          { gap: 0.35rem; }
+  .top-page-inner   { padding: 2rem 1.5rem; }
 }
