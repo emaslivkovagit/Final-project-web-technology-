@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+  Project Gutenberg - About Page (Redesigned)
+  
+  CHANGES FROM ORIGINAL (gutenberg.org/about/):
+  - Complete layout restructure: replaced flat <ul> link list with
+    semantic card-based grid layout using CSS Grid
+  - Added <header> landmark with nav bar (was missing from original about page)
+  - Added hero section with key statistics (new content block)
+  - Replaced plain <h2> headings with sectioned <article> / <section> elements
+    for better semantics and screen reader support
+  - Accordion component replaces bare link list for "More about PG"
+  - Added <footer> with structured nav (original had minimal footer markup)
+  - Removed all inline style attributes
+  - External CSS only — no <style> blocks (per assignment requirement)
+  
+  JavaScript:
+  - No JS on this page (handled on index page by teammate)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Project Gutenberg</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="https://www.gutenberg.org/gutenberg/favicon.ico">
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SITE HEADER & NAVIGATION
+       NEW: original about page lacked a fully structured nav header.
+       Replaces the original table-based logo/nav with a proper <nav>.
+       ===================================================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="/" class="logo" aria-label="Project Gutenberg home">
+        <img src="https://www.gutenberg.org/gutenberg/pg-logo-129x80.png"
+             alt="Project Gutenberg"
+             width="97"
+             height="60">
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="/about/" class="nav-link nav-link--active" aria-current="page">About</a></li>
+          <li><a href="/ebooks/" class="nav-link">Search</a></li>
+          <li><a href="/browse/scores/top" class="nav-link">Top Downloads</a></li>
+          <li><a href="/ebooks/bookshelf/" class="nav-link">Bookshelves</a></li>
+          <li><a href="/donate/" class="nav-link nav-link--cta">Donate</a></li>
+        </ul>
+      </nav>
+
+      <form class="header-search" method="get" action="/ebooks/search/" role="search">
+        <label for="header-search-input" class="visually-hidden">Search books</label>
+        <input id="header-search-input"
+               type="search"
+               name="query"
+               placeholder="Search 75,000+ books…"
+               class="header-search__input"
+               aria-label="Search books">
+        <button type="submit" class="header-search__btn" aria-label="Submit search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1 0 14 15.5l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/>
+          </svg>
+        </button>
+      </form>
+
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ------------------------------------------------------------------
+         HERO SECTION
+         NEW: original had only an <h1> directly in page_content.
+         Added dedicated hero with tagline and key statistics.
+         ------------------------------------------------------------------ -->
+    <section class="about-hero" aria-labelledby="about-hero-heading">
+      <div class="about-hero__inner">
+        <p class="about-hero__eyebrow">Est. 1971 · Free forever</p>
+        <h1 id="about-hero-heading" class="about-hero__title">
+          The world's oldest<br>
+          <em>digital library</em>
+        </h1>
+        <p class="about-hero__lead">
+          Project Gutenberg offers over 75,000 free eBooks — classic literature
+          digitized and proofread by thousands of volunteers worldwide.
+        </p>
+      </div>
+
+      <div class="stats-bar" aria-label="Project Gutenberg statistics">
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">75,000<span class="stats-bar__plus">+</span></span>
+          <span class="stats-bar__label">Free eBooks</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">54</span>
+          <span class="stats-bar__label">Years online</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">60,000<span class="stats-bar__plus">+</span></span>
+          <span class="stats-bar__label">Volunteers</span>
+        </div>
+        <div class="stats-bar__item">
+          <span class="stats-bar__number">100<span class="stats-bar__pct">%</span></span>
+          <span class="stats-bar__label">Free, always</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         MISSION SECTION
+         CHANGED: original had plain <h2> + <p> + link.
+         Restructured into two-column grid with mission card.
+         Content unchanged from original.
+         ------------------------------------------------------------------ -->
+    <section class="mission-section" aria-labelledby="mission-heading">
+      <div class="mission-section__inner">
+
+        <div class="mission-card">
+          <p class="mission-card__label">Our mission</p>
+          <blockquote class="mission-card__quote">
+            <p>To encourage the creation and distribution of eBooks.</p>
+          </blockquote>
+          <p class="mission-card__attribution">— Michael Hart, founder, 1971</p>
+        </div>
+
+        <div class="mission-text">
+          <h2 id="mission-heading">Free knowledge, for everyone</h2>
+          <p>
+            Michael Hart invented eBooks in 1971 and his memory continues to inspire
+            the creation of eBooks and related content today. Since then, thousands of
+            volunteers have digitized and diligently proofread the world's literature.
+          </p>
+          <p>
+            All Project Gutenberg eBooks are completely free and always will be.
+            A <a href="/about/background/mission_statement.html">2004 essay by Michael Hart</a>
+            provides more detail on the mission statement and the beliefs that guide
+            Project Gutenberg's activities.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         ACCORDION: MORE ABOUT PROJECT GUTENBERG
+         CHANGED: original had a flat <ul> of links.
+         Replaced with accordion cards for better scannability.
+         No JS on this page — panels are CSS-only using <details>/<summary>
+         so the content remains accessible without JavaScript.
+         ------------------------------------------------------------------ -->
+    <section class="accordion-section" aria-labelledby="more-heading">
+      <div class="accordion-section__inner">
+
+        <h2 id="more-heading" class="section-title">More about Project Gutenberg</h2>
+        <p class="section-subtitle">
+          Explore the history, philosophy, and ways to get involved.
+        </p>
+
+        <div class="accordion">
+
+          <details class="accordion__item">
+            <summary class="accordion-btn">
+              <span class="accordion-btn__icon" aria-hidden="true">📜</span>
+              <span class="accordion-btn__text">Background, History &amp; Philosophy</span>
+            </summary>
+            <div class="accordion__panel">
+              <p>
+                Read essays and articles covering the founding vision, technical milestones,
+                and philosophical motivations behind building a free digital library.
+              </p>
+              <a href="/about/background/index.html" class="accordion__link">
+                Explore the history →
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion-btn">
+              <span class="accordion-btn__icon" aria-hidden="true">🤝</span>
+              <span class="accordion-btn__text">Partners &amp; Affiliates</span>
+            </summary>
+            <div class="accordion__panel">
+              <p>
+                Project Gutenberg works with libraries, universities, and partner
+                organizations around the world to preserve and distribute literary heritage.
+              </p>
+              <a href="/about/partners_affiliates.html" class="accordion__link">
+                See our partners →
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion-btn">
+              <span class="accordion-btn__icon" aria-hidden="true">❓</span>
+              <span class="accordion-btn__text">Help &amp; How-To</span>
+            </summary>
+            <div class="accordion__panel">
+              <p>
+                Find answers to common questions about downloading eBooks, supported
+                formats, reading on Kindle or other devices, and more.
+              </p>
+              <a href="/help/" class="accordion__link">
+                Visit the help pages →
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion-btn">
+              <span class="accordion-btn__icon" aria-hidden="true">🏛️</span>
+              <span class="accordion-btn__text">Project Gutenberg Literary Archive Foundation</span>
+            </summary>
+            <div class="accordion__panel">
+              <p>
+                The PGLAF is the non-profit organization that operates Project Gutenberg,
+                accepts donations, and ensures the long-term preservation of the archive.
+              </p>
+              <a href="/about/pglaf.html" class="accordion__link">
+                Learn about the Foundation →
+              </a>
+            </div>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion-btn">
+              <span class="accordion-btn__icon" aria-hidden="true">💛</span>
+              <span class="accordion-btn__text">Ways to Donate</span>
+            </summary>
+            <div class="accordion__panel">
+              <p>
+                Project Gutenberg relies on donations to keep the archive running and
+                growing. There are several ways to contribute — every bit helps.
+              </p>
+              <a href="/donate/" class="accordion__link">
+                Support the project →
+              </a>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         CALL TO ACTION
+         NEW: original had a plain link to /donate/ buried in the <ul> list.
+         Promoted to a full CTA strip for visibility.
+         ------------------------------------------------------------------ -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-section__inner">
+        <h2 id="cta-heading" class="cta-section__title">Keep literature free</h2>
+        <p class="cta-section__text">
+          Project Gutenberg has no ads, no paywalls, and no subscriptions.
+          If you find value in free access to classic literature, please consider
+          supporting the Foundation.
+        </p>
+        <a href="/donate/" class="btn btn--primary">Donate to Project Gutenberg</a>
+        <a href="/about/contact_information.html" class="btn btn--ghost">Contact us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       SITE FOOTER
+       CHANGED: original was <div class="footer"> with a flat <ul>.
+       Replaced with semantic <footer> + flexbox layout.
+       ===================================================================== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <div class="site-footer__brand">
+        <img src="https://www.gutenberg.org/gutenberg/pg-logo-129x80.png"
+             alt="Project Gutenberg"
+             width="65"
+             height="40"
+             loading="lazy">
+        <p>Free eBooks since 1971.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <ul class="footer-nav-list">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/policy/privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="/policy/permission.html">Permissions</a></li>
+          <li><a href="/policy/terms_of_use.html">Terms of Use</a></li>
+          <li><a href="/about/contact_information.html">Contact</a></li>
+          <li><a href="/help/">Help</a></li>
+        </ul>
+      </nav>
+
+      <p class="site-footer__credit">
+        Hosted by <a href="https://www.ibiblio.org/" rel="external">ibiblio</a>.
+        Content in the public domain.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
