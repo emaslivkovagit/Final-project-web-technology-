@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic document setup -->
+  <!-- Simplified from the original head section:
+       removed extra metadata such as Open Graph tags,
+       verification tags, favicon links, and Gutenberg global stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Original page title kept -->
   <title>Free eBooks | Project Gutenberg</title>
+  <!-- Used a custom local css stylesheet for the redesign-->
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!--Top header row with the site text logo and a donate button-->
   <header class="site-header">
     <div class="header-top">
-      <a href="https://www.gutenberg.org/" class="logo">
-        <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
-          <rect x="4" y="4" width="18" height="24" rx="2" fill="#c9a84c" opacity="0.9"/>
-          <rect x="7" y="4" width="18" height="24" rx="2" fill="#e8d5a3" stroke="#c9a84c" stroke-width="1"/>
-          <line x1="11" y1="10" x2="21" y2="10" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="11" y1="14" x2="21" y2="14" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="11" y1="18" x2="17" y2="18" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <span class="logo-text">Project Gutenberg</span>
-      </a>
-
+      <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
 
+    <!--Intro/tagline area-->
+    <!--This replaces the original slogan + sub-slogan block with a shorter summary on the top of the search bar-->
     <div class="header-tagline">
       <p>Free eBooks for everyone</p>
-      <span>Classic literature, digitized by volunteers since 1971. No fees, no registration — free forever.</span>
+      <span>Classic literature, digitized by volunteers since 1971. No fees, no registration, free forever.</span>
     </div>
 
+    <!--Same function as original search form, but simple-->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
@@ -37,21 +35,21 @@
       </form>
     </div>
 
+    <!--main navigation bar to the redesigned pages-->
     <nav class="header-nav">
-      <a href="https://www.gutenberg.org/about/">About</a>
-      <a href="https://www.gutenberg.org/browse/scores/top">Frequently Downloaded</a>
-      <a href="https://www.gutenberg.org/ebooks/categories">Main Categories</a>
-      <a href="https://www.gutenberg.org/ebooks/bookshelf/">Reading Lists</a>
-      <a href="https://www.gutenberg.org/ebooks/">Search Options</a>
+      <a href="about.html">About</a>
+      <a href="frequently-downloaded.html">Frequently Downloaded</a>
+      <a href="main-categories.html">Main Categories</a>
+      <a href="reading-lists.html">Reading Lists</a>
+      <a href="search-options.html">Search Options</a>
     </nav>
   </header>
 
   <main>
-
-    <section class="shelf first-shelf">
+    <section>
       <div class="shelf-header">
         <h2>Newest Releases</h2>
-        <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date">find more</a>
+        <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date">Find more</a>
       </div>
 
       <div class="book-row">
@@ -117,6 +115,7 @@
       </div>
     </section>
 
+    <!--Newly added section that summarizes key Gutenberg facts in a more modern way-->
     <section class="stats-strip">
       <div class="stats-grid">
         <div class="stat-box">
@@ -138,10 +137,10 @@
       </div>
     </section>
 
-    <section class="shelf">
+    <section>
       <div class="shelf-header">
         <h2>Most Popular</h2>
-        <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">find more</a>
+        <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">Find more</a>
       </div>
 
       <div class="book-row">
@@ -207,7 +206,7 @@
       </div>
     </section>
 
-    <section class="categories">
+    <section>
       <h2>Browse by Category</h2>
       <div class="category-grid">
         <a href="https://www.gutenberg.org/ebooks/categories.html#history">History</a>
@@ -222,71 +221,55 @@
       </div>
     </section>
 
+    <!--This section combines and simplifies several original homepage info boxes-->
     <section class="links-section">
       <div class="links-col">
         <h3>Find Free eBooks</h3>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/browse/scores/top">Frequently Downloaded</a>
-          <p>Top 100, or ranked by popularity</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/ebooks/categories">Main Categories</a>
-          <p>The ones you'd find in any large bookstore</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/ebooks/bookshelf/">Reading Lists</a>
-          <p>Hand-curated by volunteers</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/ebooks/">Search Options</a>
-          <p>By author, title, subject, language and more</p>
-        </div>
+        <a href="https://www.gutenberg.org/browse/scores/top">Frequently Downloaded</a>
+        <p>Top 100, or ranked by popularity</p>
+
+        <a href="https://www.gutenberg.org/ebooks/categories">Main Categories</a>
+        <p>The ones you'd find in any large bookstore</p>
+
+        <a href="https://www.gutenberg.org/ebooks/bookshelf/">Reading Lists</a>
+        <p>Hand-curated by volunteers</p>
+
+        <a href="https://www.gutenberg.org/ebooks/">Search Options</a>
+        <p>By author, title, subject, language and more</p>
       </div>
 
       <div class="links-col">
         <h3>About Project Gutenberg</h3>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/about/background/50years.html">50+ Years online</a>
-          <p>Pioneering free eBooks since 1971</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/about/">100% Free</a>
-          <p>No fees, no registration, completely free</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/about/">Volunteer-based</a>
-          <p>Built with help from volunteers</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/donate/">Donate</a>
-          <p>Help us digitize more books</p>
-        </div>
+        <a href="https://www.gutenberg.org/about/background/50years.html">50+ Years online</a>
+        <p>Pioneering free eBooks since 1971</p>
+
+        <a href="https://www.gutenberg.org/about/">100% Free</a>
+        <p>No fees, no registration, completely free</p>
+
+        <a href="https://www.gutenberg.org/about/">Volunteer-based</a>
+        <p>Built with help from volunteers</p>
+
+        <a href="https://www.gutenberg.org/donate/">Donate</a>
+        <p>Help us digitize more books</p>
       </div>
 
       <div class="links-col">
         <h3>Get Help</h3>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/help/reading_options.html">Reading Options &amp; Kindle</a>
-          <p>How to read and enjoy our eBooks</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/help/faq.html">Frequently Asked Questions</a>
-          <p>Common questions about Project Gutenberg</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/help/">Help, How-To and FAQs</a>
-          <p>More information and support</p>
-        </div>
+        <a href="https://www.gutenberg.org/help/reading_options.html">Reading Options &amp; Kindle</a>
+        <p>How to read and enjoy our eBooks</p>
+
+        <a href="https://www.gutenberg.org/help/faq.html">Frequently Asked Questions</a>
+        <p>Common questions about Project Gutenberg</p>
+
+        <a href="https://www.gutenberg.org/help/">Help, How-To and FAQs</a>
+        <p>More information and support</p>
 
         <h3 class="subheading">How to Help</h3>
-        <div class="link-item">
-          <a href="https://www.pgdp.net">Distributed Proofreaders</a>
-          <p>Volunteer to proofread</p>
-        </div>
-        <div class="link-item">
-          <a href="https://www.gutenberg.org/help/errata.html">Fix and improve</a>
-          <p>Report errors, bugs and typos</p>
-        </div>
+        <a href="https://www.pgdp.net">Distributed Proofreaders</a>
+        <p>Volunteer to proofread</p>
+
+        <a href="https://www.gutenberg.org/help/errata.html">Fix and improve</a>
+        <p>Report errors, bugs and typos</p>
       </div>
 
       <div class="links-col">
@@ -308,17 +291,14 @@
       </div>
     </section>
 
-    <section class="audio-section">
+    <section>
       <h2>Audio Books</h2>
       <p>All freely available and in the public domain in the US.</p>
-      <ul>
-        <li><a href="https://www.gutenberg.org/browse/categories/1">Project Gutenberg's 662 titles read by people</a></li>
-        <li><a href="https://librivox.org">Human-read audio books from LibriVox</a></li>
-        <li><a href="https://marhamilresearch4.blob.core.windows.net/gutenberg-public/Website/index.html">The Project Gutenberg Open Audiobook Collection</a></li>
-        <li><a href="https://www.gutenberg.org/browse/categories/2">Project Gutenberg audio books from 2003</a></li>
-      </ul>
+      <p><a href="https://www.gutenberg.org/browse/categories/1">Project Gutenberg's 662 titles read by people</a></p>
+      <p><a href="https://librivox.org">Human-read audio books from LibriVox</a></p>
+      <p><a href="https://marhamilresearch4.blob.core.windows.net/gutenberg-public/Website/index.html">The Project Gutenberg Open Audiobook Collection</a></p>
+      <p><a href="https://www.gutenberg.org/browse/categories/2">Project Gutenberg audio books from 2003</a></p>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -326,7 +306,7 @@
       <div>
         <h3>Project Gutenberg</h3>
         <p>Free eBooks since 1971.</p>
-        <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a>.</p>
+        <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a></p>
       </div>
 
       <div>

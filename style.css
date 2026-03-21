@@ -1,248 +1,192 @@
-:root {
-  --green: #1a3d2b;
-  --green-mid: #254d38;
-  --gold: #c9a84c;
-  --gold-light: #e8d5a3;
-  --white: #fafaf7;
-  --off-white: #f4f0e8;
-  --border: #ddd8ce;
-  --text: #1a1a1a;
-  --text-soft: #666;
-  --heading-font: 'Playfair Display', Georgia, serif;
-  --body-font: 'Source Sans 3', sans-serif;
-  --max-width: 1100px;
-}
+/* 
+  GLOBAL PAGE STYLING
+  These rules set the basic look of the whole website.
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  Purpose:
+  - create a clean and readable base style for all pages
+  - keep the design simple and consistent across the redesigned pages
+  - replace the much more complex original Gutenberg styling with a lighter custom stylesheet
+*/
 
+
+/* Removes browser's default outer spacing, sets the main font across pages*/
 body {
-  font-family: var(--body-font);
-  background: var(--white);
-  color: var(--text);
+  margin: 0;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
+  background: #fafaf7;
+  color: #1a1a1a;
 }
 
+/* prevents images from overflowing their container, removes extra spacing under images*/
 img {
-  display: block;
   max-width: 100%;
+  display: block;
 }
 
+/* standard link color used across the site*/
 a {
-  color: var(--green);
-  text-decoration: none;
+  color: #1a3d2b;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* Serif font to create a more classic look, adding space below headings */
 h1, h2, h3 {
-  font-family: var(--heading-font);
-  line-height: 1.2;
+  font-family: Georgia, serif;
+  margin-bottom: 0.75rem;
 }
 
+/* adds spacing spacing between major content blocks */
 section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* HEADER */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+/* header */
 
-.header-top,
-.header-tagline {
-  background: var(--green);
-}
-
+/* dark green header (top), padding to make it shorter, flex: placing logo and button in one horizontal row, push elements left and right */
 .header-top {
+  background: #1a3d2b;
+  padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 2rem;
 }
 
+/* color, no underline, slightly larger than normal text, bold */
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.logo-text {
-  font-family: var(--heading-font);
-  font-size: 1.5rem;
-  color: var(--gold-light);
-}
-
-.donate-btn {
-  background: var(--gold);
-  color: var(--green);
-  padding: 0.4rem 0.9rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.donate-btn:hover {
+  color: #e8d5a3;
   text-decoration: none;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+/* inner spacing to make it look like a button */
+.donate-btn {
+  background: #c9a84c;
+  color: #1a3d2b;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .header-tagline {
+  background: #1a3d2b;
+  color: #e8d5a3;
   text-align: center;
-  padding: 0 2rem 0.75rem;
+  padding: 0 2rem 0.6rem;
 }
 
 .header-tagline p {
-  color: var(--gold-light);
-  font-family: var(--heading-font);
-  font-size: 1.1rem;
-  margin-bottom: 0.15rem;
+  margin: 0 0 0.1rem 0;
 }
 
 .header-tagline span {
-  color: rgba(255,255,255,0.82);
+  color: #f5f5f5;
   font-size: 0.9rem;
 }
 
-.header-search,
-.header-nav {
-  background: var(--green-mid);
-}
-
+/* centering search bar, spacing inside the search bar area */
 .header-search {
-  display: flex;
-  justify-content: center;
-  padding: 0.8rem 2rem;
+  background: #254d38;
+  text-align: center;
+  padding: 0.75rem 2rem;
 }
 
 .header-search form {
-  display: flex;
-  width: 100%;
-  max-width: 580px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .header-search input {
-  flex: 1;
-  padding: 0.65rem 0.9rem;
-  border: none;
-  font-size: 1rem;
-}
-
-.header-search button {
-  border: none;
-  background: var(--gold);
-  color: var(--green);
-  padding: 0.65rem 1rem;
-  font-weight: 600;
-  cursor: pointer;
+  width: 70%;
+  padding: 0.5rem;
 }
 
 .header-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  padding: 0.6rem 2rem;
+  background: #254d38;
+  text-align: center;
+  padding: 0.55rem 2rem;
 }
 
 .header-nav a {
-  color: var(--gold-light);
-  font-size: 0.92rem;
+  color: #e8d5a3;
+  text-decoration: none;
+  margin: 0 0.6rem;
 }
 
-/* MAIN CONTENT */
-.first-shelf {
-  padding-top: 2.7rem;
-}
-
+/* shared blocks */
 .shelf-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--gold-light);
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8d5a3;
   margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
+/* displays book cards in one row, overflow: allows horizontal scrolling if there are too many books for the screen */
 .book-row {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-  padding-bottom: 0.5rem;
 }
 
 .book-card {
   width: 112px;
-  flex-shrink: 0;
+  flex: 0 0 112px;
+  text-decoration: none;
+  color: #1a1a1a;
 }
 
+/* fixed width matches the card width, small text between image and text */
 .book-card img {
   width: 112px;
   height: 160px;
   object-fit: cover;
-  border-radius: 4px;
   margin-bottom: 0.4rem;
 }
 
 .book-card span {
   display: block;
   font-size: 0.75rem;
-  line-height: 1.3;
 }
 
 .book-author {
-  color: var(--text-soft);
+  color: #666;
   font-size: 0.7rem;
-  margin-top: 0.2rem;
 }
 
-/* STATS */
+/* stats */
 .stats-strip {
-  background: var(--green);
+  background: #1a3d2b;
   padding: 2rem;
 }
 
 .stats-grid {
-  max-width: var(--max-width);
+  max-width: 1100px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .stat-box {
+  flex: 1;
   text-align: center;
-  border: 1px solid rgba(232,213,163,0.3);
+  border: 1px solid rgba(232, 213, 163, 0.4);
   padding: 1rem 0.5rem;
-}
-
-.stat-box strong,
-.stat-box span {
-  display: block;
-  color: var(--gold-light);
+  color: #e8d5a3;
 }
 
 .stat-box strong {
-  font-family: var(--heading-font);
+  display: block;
+  font-family: Georgia, serif;
   font-size: 1.4rem;
 }
 
-/* CATEGORY + LINKS + FOOTER GRIDS */
-.category-grid,
-.links-section,
-.footer-grid {
-  display: grid;
-  gap: 2rem;
-}
-
+/* categories and links */
 .category-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1rem;
@@ -250,84 +194,60 @@ section {
 
 .category-grid a {
   display: block;
-  background: var(--off-white);
-  border: 1px solid var(--border);
+  background: #f4f0e8;
+  border: 1px solid #ddd8ce;
   text-align: center;
-  padding: 0.9rem;
-  border-radius: 4px;
-  font-weight: 600;
+  padding: 1rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .links-section {
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
-  align-items: start;
+  gap: 2rem;
 }
 
 .links-col h3 {
-  color: var(--green);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.links-col h3 + a,
-.links-col h3 + p {
-  margin-top: 0;
+  color: #1a3d2b;
 }
 
 .links-col a {
   display: block;
-  font-weight: 600;
-  margin-top: 0.8rem;
+  margin-top: 0.75rem;
+  font-weight: bold;
 }
 
 .links-col p {
-  color: var(--text-soft);
+  margin-top: 0.2rem;
+  color: #666;
   font-size: 0.92rem;
-  margin-top: 0.15rem;
 }
 
-.subheading {
+.subheading,
+.footer-space {
   margin-top: 1.5rem;
 }
 
-/* AUDIO */
-.audio-section h2 {
-  margin-bottom: 0.5rem;
-}
-
-.audio-section p {
-  margin-bottom: 1rem;
-}
-
-.audio-section ul {
-  padding-left: 1.2rem;
-}
-
-.audio-section li {
-  margin-bottom: 0.7rem;
-}
-
-/* FOOTER */
+/* footer */
 .site-footer {
-  background: var(--green);
-  padding: 2.5rem 2rem;
+  background: #1a3d2b;
+  padding: 2rem;
   margin-top: 2rem;
 }
 
 .footer-grid {
-  max-width: var(--max-width);
+  max-width: 1100px;
   margin: 0 auto;
+  display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2rem;
 }
 
-.site-footer h3 {
-  color: var(--gold-light);
-  margin-bottom: 0.8rem;
-}
-
+.site-footer h3,
 .site-footer p,
 .site-footer a {
-  color: var(--gold-light);
+  color: #e8d5a3;
 }
 
 .site-footer a {
@@ -335,38 +255,34 @@ section {
   margin-bottom: 0.45rem;
 }
 
-.footer-space {
-  margin-top: 1rem;
+/* search page */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .stats-grid,
-  .category-grid,
-  .links-section,
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+p {
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-  .header-top {
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
-  }
+input,
+select {
+  width: 100%;
+  padding: 0.55rem;
+  margin-top: 0.25rem;
+}
 
-  .header-search form {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+button {
+  padding: 0.6rem 1rem;
+  background: #c9a84c;
+  border: none;
+  font-weight: bold;
+}
 
-  .stats-grid,
-  .category-grid,
-  .links-section,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
+.link-list a {
+  display: inline-block;
+  margin: 0.2rem 0.45rem 0.2rem 0;
 }
 
 
