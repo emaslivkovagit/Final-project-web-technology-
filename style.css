@@ -368,3 +368,41 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* ABOUT PAGE */
+
+.main-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+body.about-page main > .shelf {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+body.about-page p {
+  line-height: 2; /* Creating more line-heignt only for about page */
+}
+
+
+
+/* READING LIST */
+
+.category-grid.letter-box a {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+  color: #2c3e34;
+}
+
+.letter-box {
+  background-color: #f4efe6;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
