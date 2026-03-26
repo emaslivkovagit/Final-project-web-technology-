@@ -5,6 +5,8 @@ toggleButtons.forEach(function (button) {
     const section = button.closest("section");
     const content = section.querySelector(".toggle-content");
 
+    if (!content) return;
+
     if (content.style.display === "none") {
       content.style.display = "block";
       button.textContent = "Collapse";
