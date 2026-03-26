@@ -11,35 +11,32 @@
 <body class="about-page"> <!-- Using a specific class for the body to be able to style it specifically. -->
 
 <!-- HEADER -->
-<header class="site-header"> <!-- Reusing the header to create continuity on the webpages. -->
-  
-  <div class="header-top">
-    <a href="/" class="logo">
-      <span class="logo-text">Project Gutenberg</span>
-    </a>
-    <a href="/donate/" class="donate-btn">Donate</a>
-  </div>
+<header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo">Project Gutenberg</a>
+      <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
+    </div>
 
-  <div class="header-tagline">
-    <p>Free eBooks for everyone</p>
-    <span>Classic literature, digitized by volunteers since 1971. No fees, no registration — free forever.</span>
-  </div>
+    <div class="header-tagline">
+      <p>Free eBooks for everyone</p>
+      <span>Explore the most viewed and downloaded books and authors.</span>
+    </div>
 
-  <div class="header-search">
-    <form action="/ebooks/search/">
-      <input type="text" placeholder="Search books">
-      <button type="submit">Search</button>
-    </form>
-  </div>
+    <div class="header-search">
+      <form method="get" action="https://www.gutenberg.org/ebooks/search/">
+        <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
 
-  <nav class="header-nav">
-    <a href="/about/">About</a>
-    <a href="/browse/scores/top">Frequently Downloaded</a>
-    <a href="/ebooks/categories">Main Categories</a>
-    <a href="/ebooks/bookshelf/">Reading Lists</a>
-    <a href="/ebooks/">Search</a>
-  </nav>
-</header>
+    <nav class="header-nav">
+      <a href="about.html">About</a>
+      <a href="frequently-downloaded.html">Frequently Downloaded</a>
+      <a href="main-categories.html">Main Categories</a>
+      <a href="reading-lists.html">Reading Lists</a>
+      <a href="search-options.html">Search Options</a>
+    </nav>
+  </header>
 
 
 <!-- CONTENT PAGE -->
