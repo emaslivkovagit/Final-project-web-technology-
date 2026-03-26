@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleTitles.forEach(function (title) {
     title.addEventListener("click", function () {
-      const section = title.closest("section");
-      const content = section.querySelector(".toggle-content");
+      const content = title.parentElement.nextElementSibling;
 
-      if (!content) return;
+      if (!content || !content.classList.contains("toggle-content")) return;
 
       if (getComputedStyle(content).display === "none") {
         content.style.display = "block";
