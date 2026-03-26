@@ -12,17 +12,28 @@
 <body class="reading-list">
 
 <!-- HEADER -->
-<header class="site-header">
+
+  <!-- Site header:
+       contains the logo, donate button, short introduction,
+       search bar, and the main navigation menu -->
+  <header class="site-header">
+
+    <!-- Top row of the header with the text logo on the left
+         and the donate button on the right -->
     <div class="header-top">
       <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
 
+    <!-- Introductory tagline area:
+         gives a short summary of what Project Gutenberg is -->
     <div class="header-tagline">
       <p>Free eBooks for everyone</p>
-      <span>Explore the most viewed and downloaded books and authors.</span>
+      <span>Classic literature, digitized by volunteers since 1971. No fees, no registration, free forever.</span>
     </div>
 
+    <!-- Search bar:
+         sends the search query directly to the real Project Gutenberg search page -->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
@@ -30,6 +41,8 @@
       </form>
     </div>
 
+    <!-- Main navigation menu:
+         links to the other redesigned pages in the project -->
     <nav class="header-nav">
       <a href="about.html">About</a>
       <a href="frequently-downloaded.html">Frequently Downloaded</a>
@@ -74,8 +87,8 @@
 
   <!-- A -->
   <section class="shelf"> <!-- Using shelf classes to create structure and acheave a continuity in styling on pages with similar layout. -->
-    <h2>A</h2>
-    <div class="category-grid letter-box"> <!-- Creating a separate class for the content to create a page styling. -->
+    <h2 class="toggle-title">A</h2>
+    <div class="category-grid letter-box toggle-content"> <!-- Creating a separate class for the content to create a page styling. -->
       <a href="https://www.gutenberg.org/ebooks/bookshelf/82">Adventure</a>
       <a href="https://www.gutenberg.org/ebooks/bookshelf/5">Africa</a>
       <a href="https://www.gutenberg.org/ebooks/bookshelf/6">African American Writers</a>
