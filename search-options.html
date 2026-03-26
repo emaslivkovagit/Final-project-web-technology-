@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup:
+       sets the character encoding, makes the layout responsive,
+       gives the page its browser-tab title, and links the stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title shown in the browser tab -->
   <title>Search Options | Project Gutenberg</title>
+
+  <!-- Link to the shared stylesheet used across the redesigned pages -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
 
+  <!-- Site header:
+       contains the text logo, donate button, short site description,
+       search bar, and navigation links to the other pages -->
   <header class="site-header">
+
+    <!-- Top row of the header with the logo on the left
+         and the donate button on the right -->
     <div class="header-top">
       <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
 
+    <!-- Short introduction to this page -->
     <div class="header-tagline">
       <p>Find free eBooks your way</p>
       <span>Browse by popularity, search with filters, or explore languages and catalogs.</span>
     </div>
 
+    <!-- Search form:
+         sends the user's search query to the real Gutenberg search page -->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Quick search from over 75,000 free eBooks...">
@@ -26,6 +42,7 @@
       </form>
     </div>
 
+    <!-- Main navigation menu for the redesigned website -->
     <nav class="header-nav">
       <a href="about.html">About</a>
       <a href="frequently-downloaded.html">Frequently Downloaded</a>
@@ -35,7 +52,11 @@
     </nav>
   </header>
 
+  <!-- Main content of the page -->
   <main class="search-main">
+
+    <!-- Intro section:
+         explains what the search page is for and how the filters work -->
     <section>
       <h1>Search Options</h1>
       <p>Use one search option or combine multiple filters to narrow down your results.</p>
@@ -52,6 +73,8 @@
         Select <strong>Language: English</strong> only if you explicitly want to exclude works in other languages.
         For example, <strong>Author: Molière</strong> and <strong>Language: English</strong> will return works by Molière translated into English.
       </p>
+
+      <!-- Quick jump links to the main parts of this page -->
       <p>
         <a href="#advanced-search">Advanced Search</a> |
         <a href="#full-text-search">Full Text Search</a> |
@@ -59,6 +82,9 @@
       </p>
     </section>
 
+    <!-- Advanced Search section:
+         gives the user a detailed form with multiple filters
+         such as author, title, subject, language, and file type -->
     <section>
       <div class="shelf-header">
         <h2 id="advanced-search">Advanced Search</h2>
@@ -67,22 +93,29 @@
 
       <p>You can use any one search option or multiple at the same time.</p>
 
+      <!-- Main advanced search form:
+           sends the chosen filters to Gutenberg's results page -->
       <form method="post" action="https://www.gutenberg.org/ebooks/results/" accept-charset="utf-8" enctype="multipart/form-data">
+
+        <!-- Text field for searching by author name -->
         <p>
           <label for="author"><strong>Author</strong></label><br>
           <input type="text" name="author" id="author">
         </p>
 
+        <!-- Text field for searching by title -->
         <p>
           <label for="title"><strong>Title</strong></label><br>
           <input type="text" name="title" id="title">
         </p>
 
+        <!-- Text field for searching by subject keyword -->
         <p>
           <label for="subject"><strong>Subject</strong></label><br>
           <input type="text" name="subject" id="subject">
         </p>
 
+        <!-- Dropdown for subject areas based on library classification categories -->
         <p>
           <label for="locc"><strong>Subject Areas</strong></label><br>
           <select id="locc" name="locc">
@@ -149,6 +182,7 @@
           </select>
         </p>
 
+        <!-- Dropdown for choosing the language of the work -->
         <p>
           <label for="lang"><strong>Language</strong></label><br>
           <select id="lang" name="lang">
@@ -182,6 +216,7 @@
           </select>
         </p>
 
+        <!-- Dropdown for choosing the general type of material -->
         <p>
           <label for="category"><strong>Datatype</strong></label><br>
           <select id="category" name="category">
@@ -198,6 +233,7 @@
           </select>
         </p>
 
+        <!-- Dropdown for choosing the file format -->
         <p>
           <label for="filetype"><strong>Filetype</strong></label><br>
           <select id="filetype" name="filetype">
@@ -218,16 +254,21 @@
           </select>
         </p>
 
+        <!-- Search button for submitting the advanced form -->
         <p>
           <button type="submit" name="submit_search">Search</button>
         </p>
       </form>
 
+      <!-- Supporting help link about formats and bibliographic details -->
       <p>
         <a href="https://www.gutenberg.org/help/bibliographic_record.html">Download Formats and Bibliographic Record</a>
       </p>
     </section>
 
+    <!-- Full Text Search section:
+         provides external search tools that search across
+         Project Gutenberg pages through search engines -->
     <section>
       <div class="shelf-header">
         <h2 id="full-text-search">Full Text Search</h2>
@@ -236,6 +277,7 @@
 
       <p>Use search engines to search through all Gutenberg pages.</p>
 
+      <!-- DuckDuckGo search form restricted to Gutenberg -->
       <form method="get" action="https://duckduckgo.com/">
         <p>
           <strong>DuckDuckGo</strong><br>
@@ -247,6 +289,7 @@
         </p>
       </form>
 
+      <!-- Google search form restricted to Gutenberg -->
       <form method="get" action="https://www.google.com/search">
         <p>
           <strong>Google</strong><br>
@@ -260,12 +303,16 @@
       </form>
     </section>
 
+    <!-- Languages and Catalogs section:
+         helps the user browse Gutenberg through language links
+         and alphabetical author/title catalogs -->
     <section>
       <div class="shelf-header">
         <h2 id="languages-catalogs">Languages &amp; Catalogs</h2>
         <a href="#top">Back to top</a>
       </div>
 
+      <!-- Links to languages that have a large number of books available -->
       <h3>Languages with more than 50 books</h3>
       <div class="link-list">
         <a href="https://www.gutenberg.org/ebooks/search/?query=l.ca">Catalan</a>
@@ -287,6 +334,7 @@
         <a href="https://www.gutenberg.org/ebooks/search/?query=l.tl">Tagalog</a>
       </div>
 
+      <!-- Alphabetical author catalog links -->
       <h3>Authors Catalog</h3>
       <div class="link-list">
         <a href="https://www.gutenberg.org/browse/authors/a">A</a>
@@ -317,6 +365,7 @@
         <a href="https://www.gutenberg.org/browse/authors/z">Z</a>
       </div>
 
+      <!-- Alphabetical title catalog links -->
       <h3>Titles Catalog</h3>
       <div class="link-list">
         <a href="https://www.gutenberg.org/browse/titles/a">A</a>
@@ -349,14 +398,20 @@
     </section>
   </main>
 
+  <!-- Footer:
+       contains project information, policy/help links,
+       and social media/news feed links -->
   <footer class="site-footer">
     <div class="footer-grid">
+
+      <!-- Short project description -->
       <div>
         <h3>Project Gutenberg</h3>
         <p>Free eBooks since 1971.</p>
         <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a></p>
       </div>
 
+      <!-- Information and policy links -->
       <div>
         <h3>Information</h3>
         <a href="https://www.gutenberg.org/about/">About</a>
@@ -367,6 +422,7 @@
         <a href="https://www.gutenberg.org/help/">Help</a>
       </div>
 
+      <!-- Social media and news feed links -->
       <div>
         <h3>Follow us</h3>
         <a href="https://www.facebook.com/project.gutenberg">Facebook</a>
