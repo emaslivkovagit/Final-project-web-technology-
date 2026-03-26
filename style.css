@@ -31,6 +31,12 @@ a {
   color: #1a3d2b;
 }
 
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* Georgia is a serif font that gives headings a more classic, literary feel, which is
    fitting for a library site. The margin-bottom adds space below every heading
    so text below it doesn't feel too cramped */
