@@ -52,6 +52,8 @@ section {
   margin-bottom: 2rem;
 }
 
+
+/* JS */
 .toggle-title::after {
   content: " ▾";
   font-size: 0.9em;
