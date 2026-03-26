@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup:
+       sets the character encoding, makes the layout responsive,
+       gives the page its browser-tab title, and links the stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title shown in the browser tab -->
   <title>Pride and Prejudice by Jane Austen | Project Gutenberg</title>
+
+  <!-- Link to the shared stylesheet used across the redesigned pages -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Site header:
+       contains the text logo, donate button, short site description,
+       search bar, and navigation links to the other pages -->
   <header>
+
+    <!-- Top row of the header with the logo on the left
+         and the donate button on the right -->
     <div class="header-top">
       <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
+
+    <!-- Short introduction to the website -->
     <div class="header-tagline">
       <p>Free eBooks for everyone</p>
       <span>78,115 free eBooks available to read and download.</span>
     </div>
+
+    <!-- Search form:
+         sends the user's search query to the real Gutenberg search page -->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
         <button type="submit">Search</button>
       </form>
     </div>
+
+    <!-- Main navigation menu for the redesigned website -->
     <nav class="header-nav">
       <a href="about.html">About</a>
       <a href="frequently-downloaded.html">Frequently Downloaded</a>
@@ -32,34 +52,52 @@
     </nav>
   </header>
 
+  <!-- Main content of the page -->
   <main>
 
-    <!-- BOOK HERO -->
+    <!-- Book hero section:
+         introduces the featured book with its title, cover,
+         author, short description, and a few key details -->
     <div class="shelf">
       <div class="shelf-header">
         <h1>Pride and Prejudice</h1>
       </div>
+
+      <!-- Book row:
+           places the cover card and the book information next to each other -->
       <div class="book-row">
+
+        <!-- Clickable book card that leads to the online reading version -->
         <a href="https://www.gutenberg.org/ebooks/1342.html.images" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg" alt="Cover of Pride and Prejudice">
           <span>Read Now</span>
         </a>
+
+        <!-- Main information block for the book -->
         <div>
           <p>by <a href="https://www.gutenberg.org/ebooks/author/68">Jane Austen</a> (1775–1817)</p>
+
+          <!-- Short summary of the story -->
           <p>
             "Pride and Prejudice" is a novel published in 1813. It follows Elizabeth Bennet, who must learn to see past first impressions and hasty judgments. With five daughters and an estate that can only pass to male heirs, the Bennet family faces financial pressure to marry well. When wealthy Mr. Darcy arrives in their countryside neighborhood, his pride and Elizabeth's prejudice set the stage for misunderstandings, hidden truths, and unexpected revelations about character and love.
           </p>
+
+          <!-- Quick facts about the book -->
           <p><strong>Language:</strong> English &nbsp;|&nbsp; <strong>Reading Level:</strong> 8th–9th grade &nbsp;|&nbsp; <strong>Downloads (30 days):</strong> 105,086</p>
         </div>
       </div>
     </div>
 
-    <!-- DOWNLOAD OPTIONS -->
+    <!-- Download section:
+         gives different file formats so the user can read
+         the eBook online or download it to a device -->
     <div class="shelf">
       <div class="shelf-header">
         <h2>Read or Download for Free</h2>
         <a href="/help/reading_options.html">Reading Guide</a>
       </div>
+
+      <!-- Grid of download and reading options -->
       <div class="category-grid">
         <a href="https://www.gutenberg.org/ebooks/1342.html.images">Read Online (HTML) — 832 kB</a>
         <a href="https://www.gutenberg.org/ebooks/1342.epub3.images">EPUB3 (E-readers / Kindle) — 23.7 MB</a>
@@ -72,11 +110,14 @@
       </div>
     </div>
 
-    <!-- ABOUT THIS EBOOK -->
+    <!-- Metadata section:
+         gives more detailed information about the eBook,
+         such as subject, release date, copyright, and credits -->
     <div class="shelf">
       <div class="shelf-header">
         <h2>About this eBook</h2>
       </div>
+
       <p><strong>Author:</strong> <a href="https://www.gutenberg.org/ebooks/author/68">Austen, Jane, 1775–1817</a></p>
       <p><strong>LoC Class:</strong> <a href="https://www.gutenberg.org/ebooks/search/?query=lcc.pr">PR: Language and Literatures: English literature</a></p>
       <p><strong>Subjects:</strong> England — Fiction, Young Women — Fiction, Love Stories, Sisters — Fiction, Domestic Fiction, Courtship — Fiction, Social Classes — Fiction</p>
@@ -86,11 +127,14 @@
       <p><strong>Notes:</strong> Wikipedia: <a href="https://en.wikipedia.org/wiki/Pride_and_Prejudice">en.wikipedia.org/wiki/Pride_and_Prejudice</a> — Improved edition: <a href="https://www.gutenberg.org/ebooks/42671">eBook #42671</a></p>
     </div>
 
-    <!-- SIMILAR BOOKS -->
+    <!-- Similar books section:
+         helps the user explore related titles, lists, and categories -->
     <div class="shelf">
       <div class="shelf-header">
         <h2>Find Similar Books</h2>
       </div>
+
+      <!-- Grid of related links -->
       <div class="category-grid">
         <a href="https://www.gutenberg.org/ebooks/1342/also/">Readers also downloaded…</a>
         <a href="https://www.gutenberg.org/ebooks/bookshelf/13">Best Books Ever Listings</a>
@@ -104,14 +148,20 @@
 
   </main>
 
+  <!-- Footer:
+       contains project information, policy/help links,
+       and social media/news feed links -->
   <footer class="site-footer">
     <div class="footer-grid">
+
+      <!-- Short project description -->
       <div>
         <h3>Project Gutenberg</h3>
         <p>Free eBooks since 1971.</p>
         <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a></p>
       </div>
 
+      <!-- Information and policy links -->
       <div>
         <h3>Information</h3>
         <a href="https://www.gutenberg.org/about/">About</a>
@@ -122,6 +172,7 @@
         <a href="https://www.gutenberg.org/help/">Help</a>
       </div>
 
+      <!-- Social media and news feed links -->
       <div>
         <h3>Follow us</h3>
         <a href="https://www.facebook.com/project.gutenberg">Facebook</a>

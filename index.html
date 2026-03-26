@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic document setup -->
-  <!-- Simplified from the original head section:
-       removed extra metadata such as Open Graph tags,
-       verification tags, favicon links, and Gutenberg global stylesheet -->
+  <!-- Basic setup for the page:
+       defines the character encoding, makes the layout responsive,
+       sets the page title, and connects the local stylesheet -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Original page title kept -->
+
+  <!-- Page title shown in the browser tab -->
   <title>Free eBooks | Project Gutenberg</title>
-  <!-- Used a custom local css stylesheet for the redesign-->
+
+  <!-- Link to the custom stylesheet used for the redesigned pages -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!--Top header row with the site text logo and a donate button-->
+
+  <!-- Site header:
+       contains the logo, donate button, short introduction,
+       search bar, and the main navigation menu -->
   <header class="site-header">
+
+    <!-- Top row of the header with the text logo on the left
+         and the donate button on the right -->
     <div class="header-top">
       <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
 
-    <!--Intro/tagline area-->
-    <!--This replaces the original slogan + sub-slogan block with a shorter summary on the top of the search bar-->
+    <!-- Introductory tagline area:
+         gives a short summary of what Project Gutenberg is -->
     <div class="header-tagline">
       <p>Free eBooks for everyone</p>
       <span>Classic literature, digitized by volunteers since 1971. No fees, no registration, free forever.</span>
     </div>
 
-    <!--Same function as original search form, but simple-->
+    <!-- Search bar:
+         sends the search query directly to the real Project Gutenberg search page -->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
@@ -35,7 +43,8 @@
       </form>
     </div>
 
-    <!--main navigation bar to the redesigned pages-->
+    <!-- Main navigation menu:
+         links to the other redesigned pages in the project -->
     <nav class="header-nav">
       <a href="about.html">About</a>
       <a href="frequently-downloaded.html">Frequently Downloaded</a>
@@ -45,13 +54,18 @@
     </nav>
   </header>
 
+  <!-- Main content of the homepage -->
   <main>
+
+    <!-- Newest releases section:
+         shows recently added eBooks as clickable book cards -->
     <section>
       <div class="shelf-header">
         <h2>Newest Releases</h2>
         <a href="https://www.gutenberg.org/ebooks/search/?sort_order=release_date">Find more</a>
       </div>
 
+      <!-- Row of book cards for the newest releases (from the week we were working on it) -->
       <div class="book-row">
         <a href="https://www.gutenberg.org/ebooks/78254" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/78254/pg78254.cover.medium.jpg" alt="Silent guests">
@@ -115,7 +129,8 @@
       </div>
     </section>
 
-    <!--Newly added section that summarizes key Gutenberg facts in a more modern way-->
+    <!-- Statistics strip:
+         highlights a few important numbers about Project Gutenberg -->
     <section class="stats-strip">
       <div class="stats-grid">
         <div class="stat-box">
@@ -137,12 +152,15 @@
       </div>
     </section>
 
+    <!-- Most popular books section:
+         shows famous and frequently downloaded eBooks -->
     <section>
       <div class="shelf-header">
         <h2>Most Popular</h2>
         <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">Find more</a>
       </div>
 
+      <!-- Row of book cards for popular books -->
       <div class="book-row">
         <a href="https://www.gutenberg.org/ebooks/84" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/84/pg84.cover.medium.jpg" alt="Frankenstein">
@@ -162,6 +180,7 @@
           <span class="book-author">Herman Melville</span>
         </a>
 
+        <!-- This card links to a local book detail page instead of the Gutenberg site - the book page that we redesigned -->
         <a href="book.html" class="book-card">
           <img src="https://www.gutenberg.org/cache/epub/1342/pg1342.cover.medium.jpg" alt="Pride and Prejudice">
           <span>Pride and Prejudice</span>
@@ -206,6 +225,8 @@
       </div>
     </section>
 
+    <!-- Category section:
+         gives quick links to large subject areas on Project Gutenberg -->
     <section>
       <h2>Browse by Category</h2>
       <div class="category-grid">
@@ -221,7 +242,9 @@
       </div>
     </section>
 
-    <!--This section combines and simplifies several original homepage info boxes-->
+    <!-- Link section:
+         groups many useful homepage links into columns
+         to make the layout cleaner and easier to scan -->
     <section class="links-section">
       <div class="links-col">
         <h3>Find Free eBooks</h3>
@@ -274,6 +297,8 @@
 
       <div class="links-col">
         <h3>Special Areas</h3>
+
+        <!-- Simple grouped link list without short descriptions underneath -->
         <div class="link-list">
           <a href="https://www.gutenberg.org/about/">About Project Gutenberg</a>
           <a href="https://www.gutenberg.org/donate/">Donating to Project Gutenberg</a>
@@ -291,6 +316,8 @@
       </div>
     </section>
 
+    <!-- Separate audio books section:
+         gives direct links to the different audiobook options -->
     <section>
       <h2>Audio Books</h2>
       <p>All freely available and in the public domain in the US.</p>
@@ -301,14 +328,19 @@
     </section>
   </main>
 
+  <!-- Site footer:
+       contains brief project info, policy links, and social media/news links -->
   <footer class="site-footer">
     <div class="footer-grid">
+
+      <!-- Short project description -->
       <div>
         <h3>Project Gutenberg</h3>
         <p>Free eBooks since 1971.</p>
         <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a></p>
       </div>
 
+      <!-- Information and policy links -->
       <div>
         <h3>Information</h3>
         <a href="https://www.gutenberg.org/about/">About</a>
@@ -319,6 +351,7 @@
         <a href="https://www.gutenberg.org/help/">Help</a>
       </div>
 
+      <!-- Social media and news feed links -->
       <div>
         <h3>Follow us</h3>
         <a href="https://www.facebook.com/project.gutenberg">Facebook</a>
