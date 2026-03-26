@@ -11,45 +11,49 @@
 <body class="categories-page">
 
 <!-- HEADER -->
- <header class="site-header">
+ <header class="site-header"> <!-- Reusing the header to create continuity on the webpages. -->
+  
     <div class="header-top">
-      <a href="index.html" class="logo">Project Gutenberg</a>
-      <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
-    </div>
+    <a href="/" class="logo">
+      <span class="logo-text">Project Gutenberg</span>
+    </a>
 
-    <div class="header-tagline">
-      <p>Free eBooks for everyone</p>
-      <span>Explore the most viewed and downloaded books and authors.</span>
-    </div>
+    <a href="/donate/" class="donate-btn">Donate</a>
+  </div>
 
-    <div class="header-search">
-      <form method="get" action="https://www.gutenberg.org/ebooks/search/">
-        <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
-        <button type="submit">Search</button>
-      </form>
-    </div>
+  <div class="header-tagline">
+    <p>Free eBooks for everyone</p>
+    <span>Classic literature, digitized by volunteers since 1971. No fees, no registration — free forever.</span>
+  </div>
 
-    <nav class="header-nav">
-      <a href="about.html">About</a>
-      <a href="frequently-downloaded.html">Frequently Downloaded</a>
-      <a href="main-categories.html">Main Categories</a>
-      <a href="reading-list.html">Reading Lists</a>
-      <a href="search-options.html">Search Options</a>
-    </nav>
-  </header>
+  <div class="header-search">
+    <form action="/ebooks/search/">
+      <input type="text" placeholder="Search books">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <nav class="header-nav">
+    <a href="/about/">About</a>
+    <a href="/browse/scores/top">Frequently Downloaded</a>
+    <a href="/ebooks/categories">Main Categories</a>
+    <a href="/ebooks/bookshelf/">Reading Lists</a>
+    <a href="/ebooks/">Search</a>
+  </nav>
+</header>
 
 <!-- CONTENT PAGE -->
 <main class="main-content">
 
-  <section>
+  <section> <!-- Sectiones are use here to create continuity and structure. Shelf is not used here to have the introduction similar on all pages. -->
     <h1>Main Categories</h1>
     <p>These categories are the categories you may find in a large physical bookstore. They have been automatically assigned.</p>
     </section>
 
-    <section class="shelf">
+    <section class="shelf"> <!-- This class is used to recreate the same style across the pages -->
     <h2>Literature</h2>
-    <div class="category-grid">
-      <a href="/ebooks/bookshelf/644">Adventure</a>
+    <div class="category-grid"> <!-- The div inside the section is used to only use the grid on the links, creating columns. Some names have been shortend for readability. -->
+      <a href="https://www.gutenberg.org/ebooks/bookshelf/644">Adventure</a>
       <a href="/ebooks/bookshelf/654">American Literature</a>
       <a href="/ebooks/bookshelf/653">British Literature</a>
       <a href="/ebooks/bookshelf/652">French Literature</a>
@@ -174,7 +178,7 @@
 </main>
 
 <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer"> <!-- Reusing the footer to create continuity on the webpages. -->
     <div class="footer-grid">
       <div>
         <h3>Project Gutenberg</h3>
@@ -198,7 +202,7 @@
         <a href="https://mastodon.social/@gutenberg_org" rel="me">Mastodon</a>
         <a href="https://bsky.app/profile/gutenberg.org" rel="me">Bluesky</a>
 
-        <h3>News feeds</h3>
+        <h3 class="footer-space">News feeds</h3>
         <a href="https://www.facebook.com/gutenberg.new">Facebook</a>
         <a href="https://mastodon.social/@gutenberg_new" rel="me">Mastodon</a>
         <a href="https://bsky.app/profile/new.gutenberg.org" rel="me">Bluesky</a>
