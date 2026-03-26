@@ -1,15 +1,15 @@
 /* 
   GLOBAL PAGE STYLING
-  These rules set the basic look of the whole website.
+  These rules set the basic look of the whole redesigned website.
 
   Purpose:
   - create a clean and readable base style for all pages
   - keep the design simple and consistent across the redesigned pages
-  - replace the much more complex original Gutenberg styling with a lighter custom stylesheet
+  - replace the much more complex original Gutenberg styling with a lighter css custom-made stylesheet
 */
 
 /* Resets the default browser margin so the page starts flush against the edges.
-   Sets Arial as the main font, adds breathing room between lines of text,
+   Sets Arial as the main font, adds room between lines of text,
    gives the whole page a warm off-white background and near-black text color */
 body {
   margin: 0;
@@ -31,7 +31,7 @@ a {
   color: #1a3d2b;
 }
 
-/* Georgia is a serif font that gives headings a more classic, literary feel —
+/* Georgia is a serif font that gives headings a more classic, literary feel, which is
    fitting for a library site. The margin-bottom adds space below every heading
    so text below it doesn't feel too cramped */
 h1, h2, h3 {
@@ -49,7 +49,7 @@ section {
 /* ============================================================
    HEADER
    The header appears at the top of every page and contains
-   the logo, donate button, tagline, search bar, and nav links.
+   the logo, donate button, tagline, search bar, and navigation links.
    It is split into four stacked rows.
    ============================================================ */
 
