@@ -51,6 +51,15 @@ section {
   margin-bottom: 2rem;
 }
 
+.toggle-title::after {
+  content: " ▾";
+  font-size: 0.9em;
+}
+
+.toggle-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /* ============================================================
    HEADER
