@@ -31,6 +31,7 @@ a {
   color: #1a3d2b;
 }
 
+/*the page content margin to make sure the content is not full-width of the screen*/
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -62,7 +63,7 @@ section {
 }
 
 .toggle-content {
-  display: none !important;
+  display: none;
 }
 
 /* ============================================================
