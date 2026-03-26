@@ -67,6 +67,14 @@ section {
 }
 
 .toggle-content.is-open {
+  display: block;
+}
+
+.category-grid.toggle-content {
+  display: none;
+}
+
+.category-grid.toggle-content.is-open {
   display: grid;
 }
 
