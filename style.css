@@ -61,6 +61,10 @@ section {
   cursor: pointer;
 }
 
+.toggle-content {
+  display: none;
+}
+
 /* ============================================================
    HEADER
    The header appears at the top of every page and contains
