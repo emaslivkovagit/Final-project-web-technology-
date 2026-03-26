@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup:
+       sets the character encoding, makes the page responsive,
+       gives the page a title, links the shared stylesheet,
+       and loads the JavaScript file for the toggle interaction -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title shown in the browser tab -->
   <title>Frequently Downloaded | Project Gutenberg</title>
+
+  <!-- Shared stylesheet used across the redesigned pages -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript file:
+       loaded with "defer" so it runs after the HTML is parsed.
+       It is used here for opening and closing the list sections. -->
   <script src="main.js" defer></script>
 </head>
+
+<!-- The id="top" is used for the "Back to top" links later on the page -->
 <body id="top">
 
+  <!-- Site header:
+       contains the text logo, donate button, short tagline,
+       search bar, and navigation menu -->
   <header class="site-header">
+
+    <!-- Top row with logo and donate button -->
     <div class="header-top">
       <a href="index.html" class="logo">Project Gutenberg</a>
       <a href="https://www.gutenberg.org/donate/" class="donate-btn">Donate</a>
     </div>
 
+    <!-- Short introductory text for this page -->
     <div class="header-tagline">
       <p>Free eBooks for everyone</p>
       <span>Explore the most viewed and downloaded books and authors.</span>
     </div>
 
+    <!-- Search form:
+         sends the user to the real Project Gutenberg search page -->
     <div class="header-search">
       <form method="get" action="https://www.gutenberg.org/ebooks/search/">
         <input type="text" name="query" placeholder="Search from over 75,000 free eBooks...">
@@ -27,6 +49,7 @@
       </form>
     </div>
 
+    <!-- Main navigation menu for the redesigned pages -->
     <nav class="header-nav">
       <a href="about.html">About</a>
       <a href="frequently-downloaded.html">Frequently Downloaded</a>
@@ -36,19 +59,29 @@
     </nav>
   </header>
 
+  <!-- Main page content -->
   <main>
 
+    <!-- Intro section:
+         explains what the download rankings mean,
+         how they are counted, and gives quick jump links
+         to the different ranking sections below -->
     <section>
       <h1>Frequently Viewed or Downloaded</h1>
+
       <p>
         Calculated from the number of times each eBook gets downloaded.
         Multiple downloads from the same Internet address on the same day count as one download.
         Addresses that download more than 100 eBooks in a day are considered robots and are not counted.
       </p>
+
       <p>
         Visualizations and graphs are available as
         <a href="https://www.gutenberg.org/about/pretty-pictures.html">pretty pictures</a>.
       </p>
+
+      <!-- Internal anchor links:
+           these let the user jump directly to each top-100 list -->
       <p>
         <strong>Top 100 eBooks:</strong>
         <a href="#books-last1">Yesterday</a> -
@@ -62,6 +95,8 @@
       </p>
     </section>
 
+    <!-- Statistics strip:
+         shows a few key numbers in a cleaner visual summary -->
     <section class="stats-strip">
       <div class="stats-grid">
         <div class="stat-box">
@@ -83,11 +118,21 @@
       </div>
     </section>
 
+    <!-- First ranking section:
+         top 100 eBooks for yesterday -->
     <section>
+
+      <!-- Section header:
+           the h2 has class "toggle-title" so the JavaScript can make it clickable.
+           Clicking it opens or closes the ordered list below. -->
       <div class="shelf-header">
         <h2 id="books-last1" class="toggle-title">Top 100 eBooks yesterday</h2>
         <a href="#top">Back to top</a>
       </div>
+
+      <!-- Ordered list of books.
+           The class "toggle-content" is used by the JavaScript:
+           it is the content block that gets opened or closed. -->
       <ol class="toggle-content">
         <li><a href="https://www.gutenberg.org/ebooks/84">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (7750)</a></li>
         <li><a href="https://www.gutenberg.org/ebooks/37683">Chambers's Twentieth Century Dictionary (part 1 of 4: A-D) (7579)</a></li>
@@ -192,11 +237,15 @@
       </ol>
     </section>
 
+    <!-- Second ranking section:
+         top 100 authors for yesterday -->
     <section>
       <div class="shelf-header">
         <h2 id="authors-last1" class="toggle-title">Top 100 Authors yesterday</h2>
         <a href="#top">Back to top</a>
       </div>
+
+      <!-- Same toggle structure as the other ranking blocks -->
       <ol class="toggle-content">
         <li><a href="https://www.gutenberg.org/browse/authors/s#a65">Shakespeare, William (14192)</a></li>
         <li><a href="https://www.gutenberg.org/browse/authors/d#a37">Dickens, Charles (13460)</a></li>
@@ -301,11 +350,16 @@
       </ol>
     </section>
 
+    <!-- Third ranking section:
+         top 100 eBooks for the last 7 days -->
     <section>
       <div class="shelf-header">
         <h2 id="books-last7" class="toggle-title">Top 100 eBooks last 7 days</h2>
         <a href="#top">Back to top</a>
       </div>
+
+      <!-- Same pattern:
+           clickable title + collapsible ordered list -->
       <ol class="toggle-content">
         <li><a href="https://www.gutenberg.org/ebooks/84">Frankenstein; or, the modern prometheus by Mary Wollstonecraft Shelley (39796)</a></li>
         <li><a href="https://www.gutenberg.org/ebooks/45304">The City of God, Volume I by Saint of Hippo Augustine (31048)</a></li>
@@ -410,6 +464,8 @@
       </ol>
     </section>
 
+    <!-- Fourth ranking section:
+         top 100 authors for the last 7 days -->
     <section>
       <div class="shelf-header">
         <h2 id="authors-last7" class="toggle-title">Top 100 Authors last 7 days</h2>
@@ -519,6 +575,8 @@
       </ol>
     </section>
 
+    <!-- Fifth ranking section:
+         top 100 eBooks for the last 30 days -->
     <section>
       <div class="shelf-header">
         <h2 id="books-last30" class="toggle-title">Top 100 eBooks last 30 days</h2>
@@ -628,6 +686,8 @@
       </ol>
     </section>
 
+    <!-- Sixth ranking section:
+         top 100 authors for the last 30 days -->
     <section>
       <div class="shelf-header">
         <h2 id="authors-last30" class="toggle-title">Top 100 Authors last 30 days</h2>
@@ -739,14 +799,20 @@
 
   </main>
 
-    <footer class="site-footer">
+  <!-- Site footer:
+       contains short project info, policy/help links,
+       and links to social media and news feeds -->
+  <footer class="site-footer">
     <div class="footer-grid">
+
+      <!-- Short description of the project -->
       <div>
         <h3>Project Gutenberg</h3>
         <p>Free eBooks since 1971.</p>
         <p>Hosted by <a href="https://www.ibiblio.org/">ibiblio</a></p>
       </div>
 
+      <!-- Information and legal/help links -->
       <div>
         <h3>Information</h3>
         <a href="https://www.gutenberg.org/about/">About</a>
@@ -757,6 +823,7 @@
         <a href="https://www.gutenberg.org/help/">Help</a>
       </div>
 
+      <!-- Social and news links -->
       <div>
         <h3>Follow us</h3>
         <a href="https://www.facebook.com/project.gutenberg">Facebook</a>
