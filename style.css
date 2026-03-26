@@ -67,7 +67,7 @@ section {
 }
 
 .toggle-content.is-open {
-  display: block;
+  display: grid;
 }
 
 /* ============================================================
