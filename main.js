@@ -3,15 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   toggleTitles.forEach(function (title) {
     title.addEventListener("click", function () {
-      const content = title.parentElement.nextElementSibling;
+      const section = title.closest("section");
+      const content = section.querySelector(".toggle-content");
 
-      if (!content || !content.classList.contains("toggle-content")) return;
+      if (!content) return;
 
-      if (getComputedStyle(content).display === "none") {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
+      content.classList.toggle("is-open");
     });
   });
 });

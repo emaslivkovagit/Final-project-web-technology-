@@ -66,6 +66,10 @@ section {
   display: none;
 }
 
+.toggle-content.is-open {
+  display: block;
+}
+
 /* ============================================================
    HEADER
    The header appears at the top of every page and contains
