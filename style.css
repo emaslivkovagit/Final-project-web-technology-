@@ -8,8 +8,9 @@
   - replace the much more complex original Gutenberg styling with a lighter custom stylesheet
 */
 
-
-/* Removes browser's default outer spacing, sets the main font across pages*/
+/* Resets the default browser margin so the page starts flush against the edges.
+   Sets Arial as the main font, adds breathing room between lines of text,
+   gives the whole page a warm off-white background and near-black text color */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -18,31 +19,42 @@ body {
   color: #1a1a1a;
 }
 
-/* prevents images from overflowing their container, removes extra spacing under images*/
+/* Stops images from overflowing their parent container if they are too wide.
+   display: block removes the small gap that appears below images by default */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* standard link color used across the site*/
+/* Sets a dark green as the default color for all links across every page */
 a {
   color: #1a3d2b;
 }
 
-/* Serif font to create a more classic look, adding space below headings */
+/* Georgia is a serif font that gives headings a more classic, literary feel —
+   fitting for a library site. The margin-bottom adds space below every heading
+   so text below it doesn't feel too cramped */
 h1, h2, h3 {
   font-family: Georgia, serif;
   margin-bottom: 0.75rem;
 }
 
-/* adds spacing spacing between major content blocks */
+/* Adds a consistent gap below every section block so
+   content areas don't run into each other */
 section {
   margin-bottom: 2rem;
 }
 
-/* header */
 
-/* dark green header (top), padding to make it shorter, flex: placing logo and button in one horizontal row, push elements left and right */
+/* ============================================================
+   HEADER
+   The header appears at the top of every page and contains
+   the logo, donate button, tagline, search bar, and nav links.
+   It is split into four stacked rows.
+   ============================================================ */
+
+/* Top bar: dark green background, logo on the left, donate button on the right.
+   flexbox with space-between pushes the two items to opposite ends */
 .header-top {
   background: #1a3d2b;
   padding: 0.5rem 2rem;
@@ -51,7 +63,8 @@ section {
   align-items: center;
 }
 
-/* color, no underline, slightly larger than normal text, bold */
+/* The site name used as a text logo. Gold color stands out against the dark green.
+   No underline keeps it looking like a logo rather than a link */
 .logo {
   color: #e8d5a3;
   text-decoration: none;
@@ -60,7 +73,8 @@ section {
   font-weight: bold;
 }
 
-/* inner spacing to make it look like a button */
+/* Gold button that links to the donation page.
+   Padding gives it the appearance of a button without using a form element */
 .donate-btn {
   background: #c9a84c;
   color: #1a3d2b;
@@ -69,6 +83,8 @@ section {
   font-weight: bold;
 }
 
+/* Tagline row directly below the top bar, same dark green background.
+   Text is centered and uses gold and white to create a subtle hierarchy */
 .header-tagline {
   background: #1a3d2b;
   color: #e8d5a3;
@@ -76,16 +92,19 @@ section {
   padding: 0 2rem 0.6rem;
 }
 
+/* Removes default paragraph margin so the tagline lines sit close together */
 .header-tagline p {
   margin: 0 0 0.1rem 0;
 }
 
+/* Slightly smaller and whiter than the gold line above — creates a subtitle effect */
 .header-tagline span {
   color: #f5f5f5;
   font-size: 0.9rem;
 }
 
-/* centering search bar, spacing inside the search bar area */
+/* Search bar row: slightly lighter green than the top bar to visually separate it.
+   The form is centered and capped in width so it doesn't stretch too wide */
 .header-search {
   background: #254d38;
   text-align: center;
@@ -97,26 +116,38 @@ section {
   margin: 0 auto;
 }
 
+/* Input takes up 70% of the form width, leaving room for a submit button */
 .header-search input {
   width: 70%;
   padding: 0.5rem;
 }
 
+/* Navigation row: same lighter green as the search bar, links are centered.
+   This visually groups the search bar and nav together below the top bar */
 .header-nav {
   background: #254d38;
   text-align: center;
   padding: 0.55rem 2rem;
 }
 
+/* Nav links are gold so they stand out against the green background.
+   Horizontal margin adds breathing room between each link */
 .header-nav a {
   color: #e8d5a3;
   text-decoration: none;
   margin: 0 0.6rem;
 }
 
-/* shared blocks */
 
-/* Resuable content section across pages. The styling addes vidual structure. */
+/* ============================================================
+   SHARED BLOCKS
+   These classes are reused across multiple pages to keep
+   the layout consistent without repeating code.
+   ============================================================ */
+
+/* A centered content card used on most pages to group related content.
+   The warm white background and subtle border lift it off the page background.
+   Rounded corners soften the look */
 .shelf {
   max-width: 1000px;
   margin: 1.5rem auto;
@@ -126,6 +157,8 @@ section {
   border-radius: 15px;
 }
 
+/* Header row inside a shelf: title on the left, a secondary link on the right.
+   The gold bottom border acts as a divider between the header and the content below */
 .shelf-header {
   display: flex;
   justify-content: space-between;
@@ -135,13 +168,16 @@ section {
   padding-bottom: 0.5rem;
 }
 
-/* displays book cards in one row, overflow: allows horizontal scrolling if there are too many books for the screen */
+/* A horizontal row of book cards. overflow-x: auto adds a scrollbar
+   if there are more cards than fit on screen, rather than wrapping them */
 .book-row {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
 }
 
+/* Each book card is a fixed 112px wide so all covers align neatly.
+   flex: 0 0 112px prevents the card from growing or shrinking in the row */
 .book-card {
   width: 112px;
   flex: 0 0 112px;
@@ -149,7 +185,8 @@ section {
   color: #1a1a1a;
 }
 
-/* fixed width matches the card width, small text between image and text */
+/* Fixed dimensions for all cover images so they line up in a uniform grid.
+   object-fit: cover crops the image to fill the box without distorting it */
 .book-card img {
   width: 112px;
   height: 160px;
@@ -157,22 +194,31 @@ section {
   margin-bottom: 0.4rem;
 }
 
+/* display: block puts the title and author on separate lines below the cover */
 .book-card span {
   display: block;
   font-size: 0.75rem;
 }
 
+/* Author name is slightly smaller and grey to visually separate it from the title */
 .book-author {
   color: #666;
   font-size: 0.7rem;
 }
 
-/* stats */
+
+/* ============================================================
+   STATS STRIP
+   A full-width dark green banner showing key numbers.
+   Used on the homepage and frequently downloaded page.
+   ============================================================ */
+
 .stats-strip {
   background: #1a3d2b;
   padding: 2rem;
 }
 
+/* Centers the boxes and spreads them evenly across the full width */
 .stats-grid {
   max-width: 1100px;
   margin: 0 auto;
@@ -181,6 +227,8 @@ section {
   justify-content: space-between;
 }
 
+/* Each box takes an equal share of the available width (flex: 1).
+   The semi-transparent gold border gives structure without being too heavy */
 .stat-box {
   flex: 1;
   text-align: center;
@@ -189,13 +237,22 @@ section {
   color: #e8d5a3;
 }
 
+/* The number is displayed larger and in Georgia to make it stand out */
 .stat-box strong {
   display: block;
   font-family: Georgia, serif;
   font-size: 1.4rem;
 }
 
-/* categories and links */
+
+/* ============================================================
+   CATEGORIES AND LINKS
+   Used on the homepage, categories page, and book detail page
+   to display groups of links in a structured grid.
+   ============================================================ */
+
+/* Three equal columns. gap adds space between each cell.
+   margin-top separates the grid from whatever heading is above it */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,6 +260,8 @@ section {
   margin-top: 1rem;
 }
 
+/* Each link looks like a button: warm beige background, subtle border,
+   centered text, bold weight */
 .category-grid a {
   display: block;
   background: #f4f0e8;
@@ -213,40 +272,57 @@ section {
   font-weight: bold;
 }
 
+/* Four-column layout for the info section on the homepage.
+   Each column contains a heading and a group of related links */
 .links-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
+/* Column headings are dark green to stand out from the link text.
+   margin-top adds space above every h3 so columns with multiple groups
+   don't run the groups together */
 .links-col h3 {
   color: #1a3d2b;
+  margin-top: 1.5rem;
 }
 
+/* The first heading in a column doesn't need top margin
+   because there's nothing above it */
+.links-col h3:first-child {
+  margin-top: 0;
+}
+
+/* Links in these columns are displayed as blocks (one per line) with
+   top margin and bold weight to make them easy to scan */
 .links-col a {
   display: block;
   margin-top: 0.75rem;
   font-weight: bold;
 }
 
+/* Description text below each link: smaller, grey, no top margin needed */
 .links-col p {
   margin-top: 0.2rem;
   color: #666;
   font-size: 0.92rem;
 }
 
-.subheading,
-.footer-space {
-  margin-top: 1.5rem;
-}
 
-/* footer */
+/* ============================================================
+   FOOTER
+   Appears at the bottom of every page. Dark green background
+   with a three-column grid of links.
+   ============================================================ */
+
 .site-footer {
   background: #1a3d2b;
   padding: 2rem;
   margin-top: 2rem;
 }
 
+/* Three columns: the first is slightly wider to hold the about text */
 .footer-grid {
   max-width: 1100px;
   margin: 0 auto;
@@ -255,28 +331,47 @@ section {
   gap: 2rem;
 }
 
+/* All text and links in the footer use the same gold color for consistency */
 .site-footer h3,
 .site-footer p,
 .site-footer a {
   color: #e8d5a3;
 }
 
+/* Footer links stack vertically with a small gap between each */
 .site-footer a {
   display: block;
   margin-bottom: 0.45rem;
 }
 
-/* search page */
-main {
+/* Any h3 that is not the first one in its column gets top margin
+   to visually separate grouped sections (e.g. Follow us / News feeds) */
+.site-footer div h3:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+
+/* ============================================================
+   SEARCH OPTIONS PAGE
+   The search options page uses a centered container class
+   instead of relying on the global main tag, so it doesn't
+   accidentally affect the layout of other pages.
+   ============================================================ */
+
+/* Centers and constrains the search page content with comfortable padding */
+.search-main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-p {
+/* Adds space below paragraphs only inside main content areas,
+   so it doesn't accidentally affect paragraphs in the header or footer */
+main p {
   margin-bottom: 1rem;
 }
 
+/* Full-width inputs and selects with consistent padding across all form pages */
 input,
 select {
   width: 100%;
@@ -284,6 +379,7 @@ select {
   margin-top: 0.25rem;
 }
 
+/* Gold submit buttons matching the donate button style */
 button {
   padding: 0.6rem 1rem;
   background: #c9a84c;
@@ -291,24 +387,21 @@ button {
   font-weight: bold;
 }
 
+/* Inline links in the search/language sections sit side by side
+   with a small gap between them */
 .link-list a {
   display: inline-block;
   margin: 0.2rem 0.45rem 0.2rem 0;
 }
 
 
+/* ============================================================
+   READING LIST PAGE
+   Extra styling for the alphabetical reading list sections.
+   ============================================================ */
 
-/* ABOUT PAGE */
-
-body.about-page p {
-  line-height: 2; /* Creating more line-heignt only for about page for readability. */
-}
-
-
-
-/* READING LIST */
-
-/* Letter list containers inside shelves */
+/* Warm beige background container for each letter group,
+   with rounded corners and spacing below to separate sections */
 .letter-box {
   background-color: #f4efe6;
   padding: 1.5rem;
@@ -316,7 +409,9 @@ body.about-page p {
   margin-bottom: 1rem;
 }
 
-/* Individual category boxed inside letter list. By combining both classes the styling only applies to links inside these grids, not all grids. */
+/* When category-grid and letter-box are used together, the individual
+   link boxes get a white background and rounded corners to stand out
+   against the beige container behind them */
 .category-grid.letter-box a {
   background-color: #ffffff;
   border-radius: 8px;
